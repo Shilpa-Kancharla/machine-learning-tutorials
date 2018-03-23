@@ -1,0 +1,349 @@
+\documentclass[10pt]{article}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amssymb,mathabx,amsthm,bm,bbm,romannum}
+\usepackage[dvips]{graphicx}
+
+\usepackage[pagebackref,hidelinks,bookmarksnumbered]{hyperref}
+\setcounter{tocdepth}{3}
+\usepackage[depth=3]{bookmark}
+
+\usepackage[margin=1in]{geometry}
+\renewcommand{\baselinestretch}{1.5}	% Line Stretch
+
+\usepackage[utf8]{inputenc}
+
+%----- theorems -----%
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{coro}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{dfn}{Definition}[section]
+\newtheorem*{pchln}{Punchline}
+\newtheorem*{hint}{Hint}
+
+\theoremstyle{remark}
+\newtheorem*{rmk}{Remark}
+\newtheorem{eg}{Example}[section]
+\newtheorem{fact}{Fact}[section]
+
+
+%----- bold fonts -----%
+
+\newcommand{\ab}{\mathbf{a}}
+\newcommand{\bbb}{\mathbf{b}}
+\newcommand{\cbb}{\mathbf{c}}
+\newcommand{\db}{\mathbf{d}}
+\newcommand{\eb}{\mathbf{e}}
+\newcommand{\fb}{\mathbf{f}}
+\newcommand{\gb}{\mathbf{g}}
+\newcommand{\hb}{\mathbf{h}}
+\newcommand{\ib}{\mathbf{i}}
+\newcommand{\jb}{\mathbf{j}}
+\newcommand{\kb}{\mathbf{k}}
+\newcommand{\lb}{\mathbf{l}}
+\newcommand{\mb}{\mathbf{m}}
+\newcommand{\nbb}{\mathbf{n}}
+\newcommand{\ob}{\mathbf{o}}
+\newcommand{\pb}{\mathbf{p}}
+\newcommand{\qb}{\mathbf{q}}
+\newcommand{\rb}{\mathbf{r}}
+\newcommand{\sbb}{\mathbf{s}}
+\newcommand{\tb}{\mathbf{t}}
+\newcommand{\ub}{\mathbf{u}}
+\newcommand{\vb}{\mathbf{v}}
+\newcommand{\wb}{\mathbf{w}}
+\newcommand{\xb}{\mathbf{x}}
+\newcommand{\yb}{\mathbf{y}}
+\newcommand{\zb}{\mathbf{z}}
+
+% denote vectors
+\newcommand{\ba}{\bm{a}}
+\newcommand{\bb}{\bm{b}}
+\newcommand{\bc}{\bm{c}}
+\newcommand{\bd}{\bm{d}}
+\newcommand{\be}{\bm{e}}
+\newcommand{\bbf}{\bm{f}}
+\newcommand{\bg}{\bm{g}}
+\newcommand{\bh}{\bm{h}}
+\newcommand{\bi}{\bmf{i}}
+\newcommand{\bj}{\bm{j}}
+\newcommand{\bk}{\bm{k}}
+\newcommand{\bl}{\bm{l}}
+\newcommand{\bbm}{\bm{m}}
+\newcommand{\bn}{\bm{n}}
+\newcommand{\bo}{\bm{o}}
+\newcommand{\bp}{\bm{p}}
+\newcommand{\bq}{\bm{q}}
+\newcommand{\br}{\bm{r}}
+\newcommand{\bs}{\bm{s}}
+\newcommand{\bt}{\bm{t}}
+\newcommand{\bu}{\bm{u}}
+\newcommand{\bv}{\bm{v}}
+\newcommand{\bw}{\bm{w}}
+\newcommand{\bx}{\bm{x}}
+\newcommand{\by}{\bm{y}}
+\newcommand{\bz}{\bm{z}}
+
+% denote random matrices
+\newcommand{\Ab}{\mathbf{A}}
+\newcommand{\Bb}{\mathbf{B}}
+\newcommand{\Cb}{\mathbf{C}}
+\newcommand{\Db}{\mathbf{D}}
+\newcommand{\Eb}{\mathbf{E}}
+\newcommand{\Fb}{\mathbf{F}}
+\newcommand{\Gb}{\mathbf{G}}
+\newcommand{\Hb}{\mathbf{H}}
+\newcommand{\Ib}{\mathbf{I}}
+\newcommand{\Jb}{\mathbf{J}}
+\newcommand{\Kb}{\mathbf{K}}
+\newcommand{\Lb}{\mathbf{L}}
+\newcommand{\Mb}{\mathbf{M}}
+\newcommand{\Nb}{\mathbf{N}}
+\newcommand{\Ob}{\mathbf{O}}
+\newcommand{\Pb}{\mathbf{P}}
+\newcommand{\Qb}{\mathbf{Q}}
+\newcommand{\Rb}{\mathbf{R}}
+\newcommand{\Sbb}{\mathbf{S}}
+\newcommand{\Tb}{\mathbf{T}}
+\newcommand{\Ub}{\mathbf{U}}
+\newcommand{\Vb}{\mathbf{V}}
+\newcommand{\Wb}{\mathbf{W}}
+\newcommand{\Xb}{\mathbf{X}}
+\newcommand{\Yb}{\mathbf{Y}}
+\newcommand{\Zb}{\mathbf{Z}}
+
+% denote random vectors
+\newcommand{\bA}{\bm{A}}
+\newcommand{\bB}{\bm{B}}
+\newcommand{\bC}{\bm{C}}
+\newcommand{\bD}{\bm{D}}
+\newcommand{\bE}{\bm{E}}
+\newcommand{\bF}{\bm{F}}
+\newcommand{\bG}{\bm{G}}
+\newcommand{\bH}{\bm{H}}
+\newcommand{\bI}{\bm{I}}
+\newcommand{\bJ}{\bm{J}}
+\newcommand{\bK}{\bm{K}}
+\newcommand{\bL}{\bm{L}}
+\newcommand{\bM}{\bm{M}}
+\newcommand{\bN}{\bm{N}}
+\newcommand{\bO}{\bm{O}}
+\newcommand{\bP}{\bm{P}}
+\newcommand{\bQ}{\bm{Q}}
+\newcommand{\bR}{\bm{R}}
+\newcommand{\bS}{\bm{S}}
+\newcommand{\bT}{\bm{T}}
+\newcommand{\bU}{\bm{U}}
+\newcommand{\bV}{\bm{V}}
+\newcommand{\bW}{\bm{W}}
+\newcommand{\bX}{\bm{X}}
+\newcommand{\bY}{\bm{Y}}
+\newcommand{\bZ}{\bm{Z}}
+
+% denote vectors
+\newcommand{\bbeta}{\bm{\beta}}
+\newcommand{\balpha}{\bm{\alpha}}
+\newcommand{\bgamma}{\bm{\gamma}}
+\newcommand{\blambda}{\bm{\lambda}}
+\newcommand{\bomega}{\bm{\omega}}
+\newcommand{\bmu}{\bm{\mu}}
+\newcommand{\bepsilon}{\bm{\epsilon}}
+\newcommand{\btheta}{\bm{\theta}}
+\newcommand{\bxi}{\bm{\xi}}
+\newcommand{\bpi}{\bm{\pi}}
+\newcommand{\bphi}{\bm{\phi}}
+
+% denote matrices
+\newcommand{\bGamma}{\bm{\Gamma}}
+\newcommand{\bLambda}{\bm{\Lambda}}
+\newcommand{\bSigma}{\bm{\Sigma}}
+
+% others
+\newcommand{\bcE}{\bm{\mathcal{E}}}	% filtration
+\newcommand{\bcF}{\bm{\mathcal{F}}}	% filtration
+\newcommand{\bcG}{\bm{\mathcal{G}}}	% filtration
+
+
+%----- double fonts -----%
+
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+
+%----- script fonts -----%
+
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+
+
+%----- special operators -----%
+
+\newcommand{\argmin}{\mathop{\mathrm{argmin}}}
+\newcommand{\argmax}{\mathop{\mathrm{argmax}}}
+
+\newcommand{\bvar}{\textbf{Var}}
+\newcommand{\bcov}{\textbf{Cov}}
+\newcommand{\brank}{\textbf{rank}}
+\newcommand{\bsign}{\textbf{sign}}
+\newcommand{\bdiag}{\textbf{diag}}	% diagonal
+\newcommand{\bdim}{\textbf{dim}}	% dimension
+\newcommand{\btr}{\textbf{tr}}	    % trace
+\newcommand{\bspan}{\textbf{span}}	% linear span
+\newcommand{\bsupp}{\textbf{supp}}	% support
+\newcommand{\bepi}{\textbf{epi}}	% epigraph
+
+\newcommand{\perm}{\textbf{Perm}}	% permutation
+\newcommand{\bias}{\textbf{Bias}}	% bias
+\newcommand{\mse}{\textbf{MSE}}		% mse
+
+\newcommand{\wass}{\textbf{Wass}}	% Wasserstein Distance
+\newcommand{\ks}{\textbf{KS}}		% Kolomogov-Smirnov Distance
+
+\newcommand{\brem}{\textbf{Rem}}		% remainders
+
+
+\newcommand{\bzero}{{\mathbf{0}}}	% zero vector
+\newcommand{\bone}{{\mathbf{1}}}	% all-one vector
+\newcommand{\bbone}{{\mathbbm{1}}}	% indicator
+
+\newcommand{\rmd}{\mathrm{d}}		% differentiation
+
+\newcommand\indep{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}	% independence
+
+%----- distribution name -----%
+
+\newcommand{\Exp}{\textbf{Exp}}
+\newcommand{\Pois}{\textbf{Pois}}
+\newcommand{\Gumb}{\textbf{Gumbel}}
+\newcommand{\Bern}{\textbf{Bernoulli}}
+\newcommand{\Bin}{\textbf{Binomial}}
+\newcommand{\NBin}{\textbf{NBin}}
+\newcommand{\Multi}{\textbf{Multi}}
+\newcommand{\Geo}{\textbf{Geo}}
+\newcommand{\Hyper}{\textbf{Hyper}}
+\newcommand{\SBM}{\textbf{SBM}}
+\newcommand{\PoisProc}{\textbf{PoisProc}}
+
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+	\posttitle{
+		\begin{center}\large#1\end{center}
+	}
+}
+
+\setlength{\droptitle}{-2em}
+\title{\textbf {STOR 565 Spring 2018 Homework 4}}
+\pretitle{\vspace{\droptitle}\centering\huge}
+\posttitle{\par}
+\subtitle{\textbf{Due on 02/21/2018 in Class}}
+\author{}
+\preauthor{}\postauthor{}
+\date{}
+\predate{}\postdate{}
+
+\begin{document}
+\pagenumbering{arabic}
+\maketitle
+
+% \pdfbookmark[<level>]{<title>}{<dest>}
+%\pdfbookmark[section]{\contentsname}{toc}
+
+\begin{rmk}
+	Credits for \textbf{Theoretical Part} and \textbf{Computational Part} are in total \textit{105 pt}. At most \textit{100 pt} can be earned. For \textbf{Theoretical Part}, you can submit your hand-writing homework.
+\end{rmk}
+
+\section*{Theoretical Part}
+
+\begin{itemize}
+	\item [1.] (PCR and PLS, \textit{10 pt}) Are the following sentences about principal component regression (PCR) and partial least square (PLS) True or False? Briefly justify your answer.
+	\begin{itemize}
+		\item [(\romannum{1})] Both PCR and PLS come up with orthogonal features.
+		
+		\item [(\romannum{2})] Let $ \bZ^{(1)},\bZ^{(2)},\cdots,\bZ^{(p)} $ be the features obtained by PLS. For an intermediate $ k < p $, we fit a regression model $ \bY $ on $ \bZ^{(1)},\bZ^{(2)},\cdots,\bZ^{(k)} $, and obtain a predicted response $ \hat{\bY}^{(k)} $ on the training set. Then $ \hat{\bY}^{(k)} $ is orthogonal to the subsequent features $ \bZ^{(k+1)},\bZ^{(k+2)},\cdots,\bZ^{(p)} $. Therefore, to compute $ \hat{\bY}^{(k+1)} $ (the predicted response based on $ \bZ^{(1)},\bZ^{(2)},\cdots,\bZ^{(k)},\bZ^{(k+1)} $), we can first regress $ \bY $ on $ \bZ^{(k+1)} $ only and obtain $ \hat{\bY}(\bZ^{(k+1)}) $ (the predicted response based on $ \bZ^{(k+1)} $ only), and then let
+		\[ \hat{\bY}^{(k+1)} \gets \hat{\bY}^{(k)} + \hat{\bY}(\bZ^{(k+1)}). \]
+		
+		\item [(\romannum{3})] The first feature from PLS is more predictive towards the response in the training set than that from PCR.
+		
+		\item [(\romannum{4})] In the procedures of constructing features from PCR and PLS, the earlier a feature is included in the regression model, the faster the training $ R^{2} $ increases.
+		
+		\item [(\romannum{5})] Using the features from PCR and PLS has lower training errors and test errors than those of the original linear model.
+	\end{itemize}
+	\begin{hint}
+		Read more in Section 6.3 from the Textbook before getting started.
+	\end{hint}
+	
+	\item [2.] (Logistic Regression, \textit{25 pt}) Suppose we have observation pairs $ \{(\bX_{i},Y_{i})\}_{i=1}^{n} $ where $ \bX_{i}\in \bbR^{p} $, $ Y_{i} \in \{ 0,1 \} $.
+	\begin{itemize}
+		\item [(\romannum{1})] Suppose $ Y_{i} \sim \Bin(p_{i}) $ where $ p_{i} \in [0,1] $ is a parameter. Write down the probability mass function (PMF) of $ Y_{i} $. What's the expectation of $ Y_{i} $?
+		
+		\item [(\romannum{2})] In the terminology of generalized linear model (GLM), there is a link function $ g: \bbR \to \bbR $ that establishes the relationship between the expectations of $ Y_{i} $'s and the linear combinations of $ \bX_{i} $'s
+		\[ g(\bbE Y_{i}) = \bX_{i}^{T}\bbeta \quad (\forall 1 \le i \le n) \]
+		where $ \bbeta \in \bbR^{p} $ is the unknown coefficient parameter for the linear part. 
+		
+		Now for the Logistic regression problem, $ g $ is the \textbf{log-odds/logit} link
+		\[ g(\mu) := \log\left( {\mu \over 1-\mu} \right). \quad (\mu \in [0,1]) \]
+		First write down the log-likelihood function of $ Y_{i} $ in terms of parameter $ \bbeta $ given the observation $ (\bX_{i},Y_{i}) $. Then write down the joint log-likelihood.
+		\begin{hint}
+			In the PMF of $ Y_{i} $, replace $ p_{i} $ by some quantities in terms of $ \bX_{i}^{T}\bbeta $ through the link between $ \bbE Y_{i} $ and $ \bX_{i}^{T}\bbeta $.
+		\end{hint}
+		
+		\item [(\romannum{3})] The maximum likelihood estimate (MLE) procedure gives the parameter estimate $ \hat{\bbeta} $ in the Logistic regression. Now suppose you have two observation pairs $ (X_{1},Y_{1}) = (1,1) $ and $ (X_{2}, Y_{2}) = (1,0) $ where the covariate $ X_{i} $'s are of one-dimension. Derive $ \hat{\beta} $ and interpret the resulting model. Note that we are NOT considering an additional intercept in the model.
+		
+		\item [(\romannum{4})] Now fit a linear regression for the observations in (\romannum{3}), also with NO additional intercept. With limited information on hand, which model would you trust more?
+	\end{itemize}
+	
+	\item [3.] (Logistic Regression, Textbook 4.6, \textit{10 pt}) Suppose we collect data for a group of students in a statistics class with variables $ X_{1} = $ hours studied, $ X_{2} = $ undergrad GPA and $ Y = $ receive an A. We fit a logistic regression and produce estimated coefficient, $ \hat{\beta}_{0} = -6 $, $ \hat{\beta}_{1} = 0.05 $, $ \hat{\beta}_{2} = 1 $.
+	\begin{itemize}
+		\item [(a)] Provide an interpretation of each coefficient in the model. Note that $ \beta_{0} $ corresponds to an additional intercept in the model.
+		
+		\item [(b)] Estimate the probability that a student who studies for 40h and has an undergrad GPA of 3.5 gets an A in the class.
+		
+		\item [(c)] How many hours would the student in part (b) need to study to have a 50\% chance of getting an A in the class.
+	\end{itemize}
+
+	\item [4.] (LDA and QDA, Textbook 4.5, \textit{10 pt}) We now examine the differences between linear discriminant analysis (LDA) and quadratic discriminant analysis (QDA).
+	\begin{itemize}
+		\item [(a)] If the Bayes decision boundary is linear, do we expect LDA or QDA to perform better on the training set? On the test set?
+		
+		\item [(b)] If the Bayes decision boundary is non-linear, do we expect LDA or QDA to perform better on the training set? On the test set?
+		
+		\item [(c)] In general, as the sample size $ n $ increases, do we expect the test prediction accuracy of QDA relative to LDA to improve, decline, or be unchanged? Why?
+		
+		\item [(d)] True or False: Even if the Bayes decision boundary for a given problem is linear, we will probably achieve a superior test error rate using QDA rather than LDA because QDA is flexible enough to model a linear decision boundary. Justify your answer.
+	\end{itemize}
+\end{itemize}
+	
+\end{document}
