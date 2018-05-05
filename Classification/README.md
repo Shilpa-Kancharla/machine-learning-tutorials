@@ -98,3 +98,15 @@ What went wrong?
 
 - Need to have a proper independent test set, that you simply cannot peek at under any circumstances. 
 - Need to have clearly documented code that contains all steps of all the analysis, from start to finish.  You must be able to share this code with independenet researchers, and you must be confident that your code is correct. If not, then your work is not ready.
+
+## Comments on Various Classifierse
+
+If the classes are really Gaussian with equal covariance matrices, then 
+
+- LDA is optimal.
+- The separating hyperplan pays a price for focusing on the noisier data at the boundaries.
+
+Optimal separating hyperplan has less assumptions, thus more robust to model misspecificaiton.
+
+- The logistic regression solution can be similar to be separating hyperplane solution.
+- For perfectly separable case, the likelihood solution can be infinity.
