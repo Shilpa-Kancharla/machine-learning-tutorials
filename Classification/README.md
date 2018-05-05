@@ -49,7 +49,7 @@ There is also a serious problem if y has more than 2 categories.
 - Instead logistic regression assume a parametric model. 
 - If this assumption holds, logistic regression, is a good model-based alternative to Bayes classifier.
 
-## Breast Cancer Subtypes Example
+### Breast Cancer Subtypes Example
 
 In the past 10 years, global gene expression analyses have identified at least 4 subtypes of breast cancer: 
 
@@ -66,3 +66,35 @@ Subgroups differ with respect to risk factors, incidence, baseline prognoses, re
 Moving taret: nobody knows the "true" subtype. 
 
 Citation: Prat et al., Breast Cancer Res Treat, 2012
+
+### Proteomics for Ovarian Cancer
+
+Ovarian cancer is the leading cause of gynecologic cancer deaths in the USA. Much interest in detecting the cancer at an earlier stage. In 2002, Petricon and Liotta - investigators from LDA and NCI - reported in the *The Lancet* that mass spectrometry analysis of circulating serum proteins can be used to discriminate between healthy patients and those with ovarian cancer. Great enthusiasm in popular press and general public. Planes were made to begin marketing a test absed on the reported diagnostic.
+
+Independent researchers took a look at the data, which was publicly available, and discovered: 
+
+1. Inadvertent changes in protocol mid-experiment: major batch effects present.
+2. Problems with instrument calibration.
+3. Difference in processing between tumor and normal samples.
+
+In summary: the observed differences between cancer and normal proteomic patterns were attributable to "artifacts of sample processing, not the underlying biology of cancer."
+
+### Gene Expression Signatures for Cancer Treatment
+
+In the early 2000s, Joe Nevins, Anil Potti, and other researchers at Duke University began developing expression-based predictors of response to chemotherapy. Many (dozens of) very promising and very high-profile papers were published in *Nature Medicine*, *The Lancet*, *Journal of Clinical Oncology*, and more. Several clinical trials were initiated, using these predictors to direct therapy for cancer patients. This reserach was hailed as a major breakthrough in cancer treatment, and researchers from all over the world tried to use these sorts of techniques in their own labs.
+
+Upon closer inspection: 
+
+Using the fact that some of the data were publicly available, independent reserachers discovered the following errors (among many others): 
+
+- Off by one errors in gene lists
+- The same heatmap displayed in multiple (unrelated) papers
+- Gene not measured on the array were reported as being part of the predictor obtained, and as providing evidence for biological plausibility
+- Reversal of sensitive/resistant labels
+
+A shocking paper published by Baggerly and Coombes in *Annals of Applied Statistics*, detailing all the errors made: "One theme that emerges is that the most common errors are simple (e.g., row or column offsets); conversely, it is our experience that the most simple errors are common."
+
+What went wrong? 
+
+- Need to have a proper independent test set, that you simply cannot peek at under any circumstances. 
+- Need to have clearly documented code that contains all steps of all the analysis, from start to finish.  You must be able to share this code with independenet researchers, and you must be confident that your code is correct. If not, then your work is not ready.
