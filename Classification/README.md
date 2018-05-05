@@ -23,3 +23,7 @@ There are many approaches out there for performing classification. These include
 - KNN classification
 - LDA & QDA
 - Support Vector Machines (SVM)
+
+## Classification Task
+
+The only difference from regression is that response y is a categorical variable with K categories. We mostly focus on K = 2.
