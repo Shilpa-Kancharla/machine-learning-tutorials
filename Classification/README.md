@@ -48,3 +48,21 @@ There is also a serious problem if y has more than 2 categories.
 - For simplicity, suppose y in {0,1}: a two-class classification problem.
 - Instead logistic regression assume a parametric model. 
 - If this assumption holds, logistic regression, is a good model-based alternative to Bayes classifier.
+
+## Breast Cancer Subtypes Example
+
+In the past 10 years, global gene expression analyses have identified at least 4 subtypes of breast cancer: 
+
+1. Luminal A
+2. Luminal B
+3. Her2-enriched
+4. Basal-like
+
+Subgroups differ with respect to risk factors, incidence, baseline prognoses, response to therapies. Want to able to determine the subytpe for a new patient with breast cancer. Controversy over the best classifier for this task: 
+
+- PAM50 classifier involves 50 genes.
+- More recent proposal involving three genes.
+
+Moving taret: nobody knows the "true" subtype. 
+
+Citation: Prat et al., Breast Cancer Res Treat, 2012
