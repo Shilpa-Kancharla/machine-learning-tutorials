@@ -195,3 +195,9 @@ Adaptive Tuning Parameters
   - Potential drawback: can be inconsistent when there is no "dominating" class
 - SVM can be extended for regression as well: epsilon-insensitive loss
 - Least squares regression uses all points for the solution.
+
+### Assessing Performance of Classifiers
+
+- By default, all classification methods assume that all errors have the same "cost"; in particular, that FP and FN are equally costly
+- However, in many applications it may be more costly to have false negatives than false positives
+- We can obtain different classifiers by changing the "cutoff"... the ROC plot measures the performance of classifiers
