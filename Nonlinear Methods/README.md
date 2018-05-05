@@ -103,3 +103,9 @@ One needs to specify
 Motivation
 - Use a maximal set of knots
 - Avoid the knot selection problem
+
+### Smoothing Splines in R
+
+In R, we can specify lambda or the degrees of freedom 
+
+`smooth.spline(x, y = NULL, w = NULL, df, spar = NULL, cv = FALSE)`
