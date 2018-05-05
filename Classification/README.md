@@ -110,3 +110,15 @@ Optimal separating hyperplane has less assumptions, thus more robust to model mi
 
 - The logistic regression solution can be similar to be separating hyperplane solution.
 - For perfectly separable case, the likelihood solution can be infinity.
+
+## Similarities between PCA and LDA
+
+- Both rank the new axes in order of importance
+  - PC1 (the first new axis that PCA creates) accounts for the most variation in the data.
+    - PC2 (the second new axis) does the second best job, and so on.
+  - LD1 (the first new axis that LDA creates) accounts for the most variation between the categories.
+    - LD2 (the second new axis that LDA creates) accounts for the second best job.
+- Both methods let us look at which variables are driving the new axes. 
+- LDA is like PCA, both try to reduce dimensions.
+  - PCA looks at the gense with the most variation.
+  - LDA tries to maximize the separation of known categories.
