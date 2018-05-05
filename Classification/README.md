@@ -104,9 +104,9 @@ What went wrong?
 If the classes are really Gaussian with equal covariance matrices, then 
 
 - LDA is optimal.
-- The separating hyperplan pays a price for focusing on the noisier data at the boundaries.
+- The separating hyperplane pays a price for focusing on the noisier data at the boundaries.
 
-Optimal separating hyperplan has less assumptions, thus more robust to model misspecificaiton.
+Optimal separating hyperplane has less assumptions, thus more robust to model misspecificaiton.
 
 - The logistic regression solution can be similar to be separating hyperplane solution.
 - For perfectly separable case, the likelihood solution can be infinity.
