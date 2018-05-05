@@ -47,3 +47,27 @@
         2. Perform forward stepwise on the training set, and identify the value of q corresponding to the best-performing model on the validation set. 
         3. Then perform forward stepwise selection in order to obtain a q-variable model on the full dataset. 
     9. Bottom line: we estimate the test error in order to choose the correct level of model complexity.  Then we refit the model on the full dataset. 
+
+- Ridge Regression & LASSO Regression: control model complexity by using an alternative to least squares, by shrinking the regression coefficients. This is also known as regularization or penalization. 
+    - Crazy Coefficients
+        - When p > n, the least squares regression coefficients are highly variable because some of the variables are highly correlated with each other. 
+        - Why does correlation matter? 
+            - Suppose that X_1 and X_2 are highly correlated with each other (assume X_1 = X_2 for the sake of this argument)
+        - Bottom line: when there are too many variables, the least squares coefficients can get crazy. This is response for poor test error, and amounts too much model complexity. 
+    1. Ridge Regression
+        1. Perform ridge regression for a very fine grid of lambda values
+        2. Use cross validation or the validation set approach to select the optimal value of lambda, that is, the best level of model complexity
+        3. Perform ridge on the full dataset, using that value of lambda.
+        4. Drawbacks
+            1. Ridge regression is a simple idea and has a number of attractive properties: for instance, you can continuously control model complexity through the tuning parameter lambda
+            2. But it suffers in terms of model interpretability, since the final model contain all p variables, no matter what. 
+            3. The LASSO involves performing a little tweak to ridge regression so that the resulting model contains mostly zeros. 
+            4. In other words, the resulting model is sparse. We say that the LASSO performs feature selection
+    2. LASSO Regression: performs feature selection, resulting in a sparse model. Involves performing tweak to ridge regression so that the resulting model contains mostly zeros. 
+        1. Lambda is a nonnegative tuning parameter that controls model complexity. 
+        2. When lambda is zero, we get least squares.
+        3. When lambda is very large, we get beta = 0. 
+        4. Unlike ridge regression, LASSO will give some coefficients exactly equal to zero for intermediate values of lambda.
+        5. Perform LASSO for a very fine grid of lambda values.
+        6. Use CV or the validation set approach to select the optimal value of lambda - that is, best level of model complexity.
+        7. Perform the LASSO on the full dataset, using that value of lambda.
