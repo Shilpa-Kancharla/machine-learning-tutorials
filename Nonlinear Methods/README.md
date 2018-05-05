@@ -90,3 +90,16 @@ Generate the B-spline basis matrix for a natural cubic spline
 
 - Choose df-1-intercept interior knots at quantiles of x; 
 - Returns a matrix of dimension n by df, `df = length(knots) + 1 + 1` (if intercept)
+
+## Regression Splines
+
+One needs to specify 
+- the order of the spline
+- the number of knots
+- the location of knots
+
+## Smoothing Splines
+
+Motivation
+- Use a maximal set of knots
+- Avoid the knot selection problem
