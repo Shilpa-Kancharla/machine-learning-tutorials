@@ -32,3 +32,19 @@ Try to achieve more flexible representations for f(x). Use a dictionary consisti
 - wavelet bases
 
 Need to control model complexity.
+
+### Control Model Complexity
+- Restriction methods: decide beforehand to limit the class of functions
+  - Additive model
+- Selection methods: adaptively scan the dictionary and include only "useful" basis functions
+  - "Variable selection"
+  - Stagewise greedy approaches like CART, MARS, boosting
+- Regularization methods: use entire dictionary but restrict coefficients
+  - Ridge, LASSO, smoothing splines
+
+## Splines
+- Piecewise polynomial function: divide the domain of x into continuous intervals and fit separate polynomials in each interval
+  - Regresion spline (fixed knots spline)
+  - Smoothing spline
+  - Thin plate spline
+- Advantages: flexible, local smoothing
