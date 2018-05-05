@@ -41,3 +41,9 @@
         1. Forward stepwise selection isn’t guaranteed to given you the best model containing q variables. 
         2. To get the best model with q variables, you’d need to consider every possible one; computationally intractable. 
         3. If you find a better model with one variable first, it is possible that you wouldn’t be able to consider a better model with two variables. 
+        
+    8. Procedure
+        1. Split data into a training set and a validation set. 
+        2. Perform forward stepwise on the training set, and identify the value of q corresponding to the best-performing model on the validation set. 
+        3. Then perform forward stepwise selection in order to obtain a q-variable model on the full dataset. 
+    9. Bottom line: we estimate the test error in order to choose the correct level of model complexity.  Then we refit the model on the full dataset. 
