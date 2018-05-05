@@ -12,6 +12,7 @@ There are many approaches out there for performing classification. These include
   - Logistic regression
   - LDA (https://www.youtube.com/watch?v=azXCzI57Yfc)
   - QDA
+    - https://www.youtube.com/watch?v=vp44az4pNz4
   
 - Non-parametric methods: KNN classification
 
