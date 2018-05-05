@@ -14,7 +14,7 @@ There are many approaches out there for performing classification. These include
   - QDA
     - Part 1: https://www.youtube.com/watch?v=vp44az4pNz4
     - Part 2: https://www.youtube.com/watch?v=UPHylxCaBaU
-    - Part 3: 
+    - Part 3: https://www.youtube.com/watch?v=t6GWx7NJ7eA
   
 - Non-parametric methods: KNN classification
 
