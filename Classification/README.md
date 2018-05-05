@@ -28,6 +28,13 @@ There is also a serious problem if y has more than 2 categories.
 - Unfortunately, this coding implies an ordering on the outcomes, putting drug overdose between stroke and epileptic seizure. 
 - In practice, there is no particular reason that this needs to be the case and one could choose any other equally reasonable coding. 
 
+### 0-1 Loss & Optimal Classifier
+
+- A natural loss function for categorical data is the 0-1 loss function which counts how many cases are classified incorrectly.
+- As in the setting of linear regression, in general we want to estimate a function that gives the smallest 0-1 loss.
+- Using this loss function, a good classifier is one for the test error is minimized.
+- It turns out that the test error based on 0-1 loss is minimized by if we assign each observation to the most likely cases, given its predictor values P(Y = k | X = x_0). This is known as the **Bayes classifier**. In general, we cannot use this unless we know the joint probability distribution. 
+  - We can also get the Bayes error rate, which is the lowest test error we can get. 
 
 ## High Dimensional Classification 
 - Classification using linear regression
@@ -35,3 +42,9 @@ There is also a serious problem if y has more than 2 categories.
 - KNN classification
 - LDA & QDA
 - Support Vector Machines (SVM)
+
+## Logistic Regression
+- Straightforward extension of linear regression to the classification setting
+- For simplicity, suppose y in {0,1}: a two-class classification problem.
+- Instead logistic regression assume a parametric model. 
+- If this assumption holds, logistic regression, is a good model-based alternative to Bayes classifier.
