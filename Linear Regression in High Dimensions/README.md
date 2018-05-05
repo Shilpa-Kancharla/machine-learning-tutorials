@@ -71,3 +71,27 @@
         5. Perform LASSO for a very fine grid of lambda values.
         6. Use CV or the validation set approach to select the optimal value of lambda - that is, best level of model complexity.
         7. Perform the LASSO on the full dataset, using that value of lambda.
+
+So far we have seen two approaches that select subsets of the features and fit a least squares model: 
+- Variable Pre-Selection
+- Forward Stepwise Selection
+
+And we have seen two approaches that fit a shrunken model instead of using least squares: 
+- Ridge Regression
+- LASSO Regression
+
+Now we observe principal components regression (PCR), that first finds a low-dimensional subspace of the data and then fits a model on that low-dimensional subspace, using least squares. 
+
+- Principal Components Regression (PCR): 
+    - Our data consists of n observations in a p-dimensional space
+    - However, not all of those p dimensions are equally useful, especially when p >> n. 
+    - Many are either completely redundant (correlated features) or uninformative (noise features)
+    - Can we find a low-dimensional representation of the variables that captures most of the variability in the data? 
+    - This is a dimension reduction approach. 
+    - PCR doesn’t yield feature selection - all of the original predictors are involved in the final model. 
+    - But when M is small, then PCR can avoid overfitting and can give good results.
+    - Choose M by cross validation or validation set approach. 
+    - With M = p, we just get least squares regression: no dimension reduction occurs. 
+    - Turns out that PCR is closely related to ridge regression.
+    - Shortcoming of PCR: the first M principal components are guaranteed to explain a lot of the variation in the data, but that doesn’t mean that they are predictive of the response.
+
