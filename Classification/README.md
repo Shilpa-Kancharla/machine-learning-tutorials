@@ -17,13 +17,21 @@ There are many approaches out there for performing classification. These include
 
 - Margin-based classifiers: support vector machines (SVM)
 
+The only difference from regression is that response y is a categorical variable with K categories. We mostly focus on K = 2. 
+
+### Drawbacks of Linear Regression for Classification
+
+If we code the values of y as 0 and 1 (instead of -1 and 1), then the linear regression gives an estimate of the probability P(y = 1 | X), which is sensible. However, there is no guarantee that the estimated probabilities are in fact between 0 and 1. And in general, they are actually not. 
+
+There is also a serious problem if y has more than 2 categories. 
+- Suppose that we are trying to predict the medical condition of a patient in th emergency room on the basis of her symptoms, and there are three possible diagnoses: stroke (coded as 1), drug overdose (coded as 2), and epileptic seizure (coded as 3). 
+- Unfortunately, this coding implies an ordering on the outcomes, putting drug overdose between stroke and epileptic seizure. 
+- In practice, there is no particular reason that this needs to be the case and one could choose any other equally reasonable coding. 
+
+
 ## High Dimensional Classification 
 - Classification using linear regression
 - Logistic regression (and penalized logistic regression)
 - KNN classification
 - LDA & QDA
 - Support Vector Machines (SVM)
-
-## Classification Task
-
-The only difference from regression is that response y is a categorical variable with K categories. We mostly focus on K = 2.
