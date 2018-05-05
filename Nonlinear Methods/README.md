@@ -109,3 +109,11 @@ Motivation
 In R, we can specify lambda or the degrees of freedom 
 
 `smooth.spline(x, y = NULL, w = NULL, df, spar = NULL, cv = FALSE)`
+
+## GAMs
+
+- Calculate separate f for each X and then add them all together
+- There are different ways of representing f_j
+- One could use a polynomial as in polynomial regression
+- One could use a smoothing kernel
+- Most common approach we use is a spline
