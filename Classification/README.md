@@ -99,7 +99,7 @@ What went wrong?
 - Need to have a proper independent test set, that you simply cannot peek at under any circumstances. 
 - Need to have clearly documented code that contains all steps of all the analysis, from start to finish.  You must be able to share this code with independenet researchers, and you must be confident that your code is correct. If not, then your work is not ready.
 
-## Comments on Various Classifierse
+## Comments on Various Classifiers
 
 If the classes are really Gaussian with equal covariance matrices, then 
 
