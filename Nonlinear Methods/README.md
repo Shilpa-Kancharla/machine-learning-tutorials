@@ -23,3 +23,10 @@ For nonlinear methods, we relax the linearity assumption while still attempting 
 - Individual observations have large influences on remote parts of the curve
 - The polynomial degree cannot be controlled continuously
 - Need more flexible basis functions
+
+### Overcomplete Basis
+
+Try to achieve more flexible representations for f(x). Use a dictionary consisting of a very large number of basis functions, far more than affordable 
+- piecewise polynomials and splines
+- wavelet bases
+Need to control model complexity.
