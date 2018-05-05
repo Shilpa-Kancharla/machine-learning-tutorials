@@ -81,3 +81,12 @@ In R, `library(splines)`
 - Frees up four degrees of freedom (two constraints in each boundary region), which can be spent in the interior region
 - The price is bias near the boundaries.
 - Assuming the function is linear near the boundaries (where there is less information anyway) is often considered reasonable.
+
+### R for Natural Cubic Splines (NCS)
+
+Generate the B-spline basis matrix for a natural cubic spline 
+
+`ns(x, df = NULL, knots = NULL, intercept = F, Boundary.knots = range(x))`
+
+- Choose df-1-intercept interior knots at quantiles of x; 
+- Returns a matrix of dimension n by df, `df = length(knots) + 1 + 1` (if intercept)
