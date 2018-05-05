@@ -37,7 +37,7 @@
     6. Which value of q is the best? 
         1. This procedure traces out a set of models, containing between 1 and p variables. 
         2. The one that minimizes test error. 
-    7. Drawback
+    7. Drawbacks
         1. Forward stepwise selection isn’t guaranteed to given you the best model containing q variables. 
         2. To get the best model with q variables, you’d need to consider every possible one; computationally intractable. 
         3. If you find a better model with one variable first, it is possible that you wouldn’t be able to consider a better model with two variables. 
