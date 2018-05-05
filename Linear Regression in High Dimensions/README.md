@@ -40,4 +40,4 @@
     7. Drawback
         1. Forward stepwise selection isn’t guaranteed to given you the best model containing q variables. 
         2. To get the best model with q variables, you’d need to consider every possible one; computationally intractable. 
-        3. 
+        3. If you find a better model with one variable first, it is possible that you wouldn’t be able to consider a better model with two variables. 
