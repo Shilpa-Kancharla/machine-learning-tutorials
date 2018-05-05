@@ -48,4 +48,8 @@ Need to control model complexity.
   - Smoothing spline
   - Thin plate spline
 - Advantages: flexible, local smoothing
+- Knots: places where piecewise functions meet
 - Cubic spline is the lowest order spline for which knot-discontinuity is not visible to human eyes.
+- **B-Splines**: alternative bases for polynomial splines
+  - Each basis function is nonzero ovre at most M consecutive intervals (local support)
+  - Resulting design matrix is banded
