@@ -48,3 +48,4 @@ Need to control model complexity.
   - Smoothing spline
   - Thin plate spline
 - Advantages: flexible, local smoothing
+- Cubic spline is the lowest order spline for which knot-discontinuity is not visible to human eyes.
