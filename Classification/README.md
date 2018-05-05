@@ -148,3 +148,50 @@ Are nonlinear kernels better?
 **Yes**, if the true decision boundary between the classes is nonlinear, and you have enough observations (relative to the number of features) to accurately estimate the decision boundary.
 
 **No**, if you are in a very high-dimensional setting such that estimating a nonlinear decision boundary is hopeless (unless a nonlinear variable selection is applied). 
+
+### Role of Tuning Parameters
+
+Large C
+- Discourage any positive zeta values
+- May lead to an overfit wiggly boundary in the original space
+
+Small C
+- Encourage small value of ||w||
+- May lead to smoother boundary
+
+Adaptive Tuning Parameters
+- Cross Validation
+- Minimizing Test Errors
+
+### SVM versus Other Classification Methods
+
+- The main difference between SVM and other classification methods (e.g., logistic regression) is the loss function used to assess the "fit". 
+- Zero-one loss: not continous, difficult to work with
+- Hinge Loss
+- Logistic Loss
+
+### SVM versus Logistic Regression
+
+- Bottom Line: Support vector classifier and logistic regression are closely related
+- Neither they nor any other approach can overcome the "curse of dimensionality"
+- The "kernel trick" makes things computationally easier, but it does not remove the danger of overfitting.
+- SVM can directly use a nonlinear kernel...but could do that with logistic or linear regression too. 
+- One of the disadvantages of SVM (compared to some of the other methods) is that it does not provide a measure of uncertainty: cases are "classified" to belong to one of the two classes (hard classifiers). Additional steps can be done to estimate class conditional probabilities.
+- Both SVM and logistic regression can be extended for problems H > 2 categories.
+
+### In High Dimensions
+
+- In SVMs, a tuning parameter controls the amount of flexibility of the classifier.
+- This tuning parameter is like a ridge penalty, both mathematically and conceptually. The SVM decision rule involves all of the variables (the SVM problem cab be written as a ridge problem but with the Hinge Loss)
+- Can get a sparse SVM using a LASSO penalty; this yields a decision rule involving only a subset of the features. 
+- Logistic regression and other classical statistical approaches could be used nonlinear expansions of features. But this makes high-dimensionality issues worse.
+
+### Extensions of SVM
+
+- For more than 2 classes, binary SVM can be used multiple times to classify K classes (one-vs-one; one-vs-all)
+- One-vs-one: perform K choose 2 binary classifiers and then combine the results by majority vote.
+  - Potential drawback: each binary classifier only uses a small portion of the data.
+- One-vs-all: perform K binary classifiers (each class versus the rest) and then combine. 
+  - Potential drawback: can be inconsistent when there is no "dominating" class
+- SVM can be extended for regression as well: epsilon-insensitive loss
+- Least squares regression uses all points for the solution.
