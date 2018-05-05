@@ -53,3 +53,21 @@ Need to control model complexity.
 - **B-Splines**: alternative bases for polynomial splines
   - Each basis function is nonzero ovre at most M consecutive intervals (local support)
   - Resulting design matrix is banded
+
+### Generating B-Spline Basis in R
+
+`bs(x, df = NULL, knots = NULL, degree = 3, intercept = F, boundary.knots)`
+
+Generates the B-spline basis matrix for a polynomial spline.
+- df: degrees of freedom
+- knots: choose (interior) df-degree-1 (intercept) knots at quantiles of x
+- degree: degree of piecewise polynomial; default 3 (cubic splines)
+- intercept: if TRUE, an intercept is included in the basis; default FALSE
+
+Returns a matrix of dimension n by df, df = length(knots) + 3 + 1 (if intercept)
+- `bs(x, df = 7)` gives an n by 7 matrix, a basis matrix evaluated at n observations of x. Four knots are (20, 40, 60, 80th) quantiles of x.
+- `bs(x, degree = 1, knots = c(0.2, 0.4, 0.5=6))` generates n by 4 matrix for linear splines, with 3 interior knots. 
+
+In R, `library(splines)` 
+1. Specify the number of basis functions or degrees of freedom.
+2. Let the data decide the positions of the knots (default)
