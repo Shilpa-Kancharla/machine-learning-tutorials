@@ -1,0 +1,5 @@
+library(splines)
+fit1 = lm(y~bs(x,degree = 1, knots = c(0.2, 0.4, 0.6)))
+fit2 = lm(y~bs(x, degree = 2, knots = c(0.2, 0.4)))
+fit3 = lm(y~bs(x, degree = 3, knots = c(0.2, 0.4, 0.6)))
+fit4 = lm(y~bs(x, df = 20))
