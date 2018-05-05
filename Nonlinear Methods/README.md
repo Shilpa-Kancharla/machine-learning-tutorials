@@ -71,3 +71,13 @@ Returns a matrix of dimension n by df, df = length(knots) + 3 + 1 (if intercept)
 In R, `library(splines)` 
 1. Specify the number of basis functions or degrees of freedom.
 2. Let the data decide the positions of the knots (default)
+
+### Boundary Effects
+- The behavior of polynomial fit tends to be erratic near the boundaries.
+- The piecewise polynomial fit beyond the boundary knots behave more wildly than the corresponding global polynomials in that region.
+
+## Natural Cubic Splines
+- Additional constraints: the funciton be linear beyond the boundary knots
+- Frees up four degrees of freedom (two constraints in each boundary region), which can be spent in the interior region
+- The price is bias near the boundaries.
+- Assuming the function is linear near the boundaries (where there is less information anyway) is often considered reasonable.
