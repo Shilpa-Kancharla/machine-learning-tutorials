@@ -13,6 +13,8 @@ There are many approaches out there for performing classification. These include
   - LDA (https://www.youtube.com/watch?v=azXCzI57Yfc)
   - QDA
     - Part 1: https://www.youtube.com/watch?v=vp44az4pNz4
+    - Part 2: 
+    - Part 3: 
   
 - Non-parametric methods: KNN classification
 
