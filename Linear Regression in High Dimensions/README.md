@@ -1,4 +1,4 @@
-Linear Regression in High Dimensions
+## Linear Regression in High Dimensions
 
 - Variable Pre-Selection: simplest, most straightforward method
 
