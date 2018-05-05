@@ -27,6 +27,11 @@
 
 ## Nonlinear Methods
 
+- Polynomial Regression
+- Basis Expansion
+- Splines
+- Generalized Additive Models
+
 ## Tree-Based Methods
 
 ## Unsupervised Learning
