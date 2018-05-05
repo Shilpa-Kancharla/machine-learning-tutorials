@@ -125,3 +125,26 @@ Optimal separating hyperplane has less assumptions, thus more robust to model mi
 - LDA is like PCA, both try to reduce dimensions.
   - PCA looks at the gense with the most variation.
   - LDA tries to maximize the separation of known categories.
+  
+## Comparing LDA and QDA
+
+### Linear Discriminant Analysis (LDA)
+- For p predictors and one common covariance matrix for all classes, we need to estimate K by p parameters. 
+- Less flexible and less variance, but potentially high bias if the assumption is wrong.
+- Better when we have less training observations, in order to reduce variance.
+
+### Quadratic Discriminant Analysis (QDA)
+- For p predictors, for 1 covariance matrix, we need to estimate p(p+1)/2 parameters. For K covariance matrices we need to estimate K times p(p+1)/2.
+- Recommended if we have lots of training observations, or if the assumption of LDA is wrong. 
+
+## Support Vector Machines (SVM)
+
+- The support vector machine is just like the support vector classifier, but it elegantly allows for nonlinear expansions of the variables: "nonlinear kernels"
+- However, linear regression, logistic regression and other classical statistical approaches can also be applied to nonlinear functions of the variables
+- For historical reasons, SVMs are more frequently used with nonlinear expansions as compared to other statistical approaches.
+
+Are nonlinear kernels better? 
+
+**Yes**, if the true decision boundary between the classes is nonlinear, and you have enough observations (relative to the number of features) to accurately estimate the decision boundary.
+
+**No**, if you are in a very high-dimensional setting such that estimating a nonlinear decision boundary is hopeless (unless a nonlinear variable selection is applied). 
