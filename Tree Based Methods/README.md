@@ -141,3 +141,8 @@ Boosting has 3 tuning parameters:
 1. Number of trees *B*: unlike bagging and random forests, boosting can overfit if *B* is too large, though this happens slowly. We use cross validation to select *B*. 
 2. Shrinkage parameter *lambda*: a small posisitve number that controls the rate of learning (typically 0.01 or 0.001). Lambda slows down the learning process, allowing more and different shaped trees to attack the residuals. A very small *lambda* may require a very large *B* to achieve good performance.
 3. The nubmer of splits in each tree *d*: controls the complexity of the boosted ensemble. Often a single split d = 1 works well (each tree is a stump). When d = 1, we are fitting an additive model, and in general *d* is the interaction depth.
+
+Some remarks: 
+- Note that in each step, we fit the model using current residuals, rather than the original outcome. 
+- The key in boosting is that each individual tree has to be small.
+- A potential advantage of boosting over bagging and random forests is interpretability especially if we use small trees (using stumps gives an additive model). 
