@@ -207,3 +207,9 @@ How to choose *K*?
 - General Suggestions
   - Scale if features measured differently
   - Don't scale if features measured in same way & scale has meaning
+
+### PC Analysis in R
+- By default, `prcomp` centers the variables
+- The option `scale = TRUE` standardizes the variables to have standard deviation 1
+- The `rot` is shorthand for **rotation**, which reflects the fact that PC's are linear combinations of the original variables
+- Each PC (column) in the table gives the weights for the linear combination for calculating the *m*th PC. So the columns of the table give the **PC loadings**.
