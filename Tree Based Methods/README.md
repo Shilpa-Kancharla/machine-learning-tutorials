@@ -48,7 +48,9 @@ Cons
 
 By aggregating many decision trees, the predictive performance of trees can be substantially improved.
 
-## Bootstrap
+## Bootstrap 
+
+https://medium.com/@SeattleDataGuy/how-to-develop-a-robust-algorithm-c38e08f32201
 
 - Bagging, random forests, and boosting use trees as building blocks to construct more powerful prediction models (unfortunately, this comes at the cost of ease of interpretation)
 - All of these methods build many trees to improve the performance of tree-based methods. This is motivated by the fact that usual trees have high variance.
