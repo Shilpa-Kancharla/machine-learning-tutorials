@@ -52,6 +52,10 @@ By aggregating many decision trees, the predictive performance of trees can be s
 
 https://medium.com/@SeattleDataGuy/how-to-develop-a-robust-algorithm-c38e08f32201
 
+Confidence Intervals: http://www2.stat.duke.edu/~banks/111-lectures.dir/lect13.pdf
+- Data is normally distributed (which rarely happens in practice)
+- The sample size *n* is large enough that this holds asymptotically (CLT)
+
 Bootstrap method refers to random sampling with replacement. This sample is referred to as a resample. This allows the model or algorithm to get a better understanding of the various biases, variances and features that exist in the resample. Taking a sample of the data allows the resample to contain different characteristics than it might have contained as a whole. This is good for small size datasets that have a tendency to overfit.
 
 Bootstrap is useful because it provides stability of a solution. By using multiple sample datasets and then testing multiple methods, it can increase robustness. Bootstrapping uses both bagging and boosting, which will be discussed later.
