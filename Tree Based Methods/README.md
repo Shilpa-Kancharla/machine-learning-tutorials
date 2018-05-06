@@ -21,3 +21,15 @@ The main steps of tree-based methods are as follows:
 - One option is to consider a split only if the drop in RSS is larger than some (high) threshold
 - However, this may not be a good strategy since a so-so split at step *j* may be followed by a great one at step *j* + 1
 - Instead, we first grow a large tree, e.g., until no region has > 5 observations, and then prune it to obtain a subtree
+
+## Algorithm: Building a Regression Tree
+
+1. Use recursive binary splitting to grow a large tree on the training data, stopping only when each terminal node has fewer than some minimum number of observations.
+2. Apply cost complexity pruning to the large tree in order to obtain a sequence of best subtrees, as a function of alpha.
+3. Use K-fold cross-validation to choose alpha. That is, divide the training observations into K folds. For each k = 1,...,K:
+  a. Repeat steps 1 and 2 on all but the *k*th fold of the training data.
+  b. Evaluate the mean squared prediction error on the data in the left-out *k*th fold, as a function of alpha.
+  
+  Average the results for each value of alpha, and pick alpha to minimize the average error.
+
+4. Return the subtree from Step 2 that corresponds to the chosen value of alpha.
