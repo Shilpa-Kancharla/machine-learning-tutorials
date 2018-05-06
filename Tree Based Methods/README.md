@@ -132,6 +132,6 @@ Boosting also requires bootstrapping. Unlike bagging, boosting weighs each sampl
 - Instead of fitting a single large decision tree, which can potentially overfit of the data, in boosting we learn slowly.
   - Each tree is small, with just a few terminal nodes.
   - Given the current model, we fit a decision tree to the residuals from the previous model as the response.
-  - We then add this new deicision tree into the fitted function and update the residuals.
+  - We then add this new decision tree into the fitted function and update the residuals.
 - By fitting small trees to the residuals, we slowly improve the projected function in areas where it does not perform well.
 - The *i*th classifier is supposed to correct the mistakes made by the previous classifier (*i* - 1). It is done by weighing more the misclassified observations. The final classifier is calculated by a weighted mean of all the "weak" classifiers, the weights being close the accuracies calculated for each classifier.
