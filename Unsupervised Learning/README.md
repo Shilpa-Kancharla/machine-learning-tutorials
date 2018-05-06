@@ -70,6 +70,13 @@ Hierarchical clustering results in a sequence of solutions (nested clusters), or
 - Computationally efficient, and can be applied to datasets with a large number of samples (variables)
 - No hierarchy among clusters, if *K* is changed, the cluster memberships will also change
 
+### Solution
+- Although the optimization problem in *K*-means is simple and intuitive, finding exact solutions (global minimum) is not tractable
+- However, we can efficiently find good approximate solutions for this problem (local minimum) using the following algorithm: 
+  - Randomly assign each observation to one of the *K* clusters.
+  - Iterate until the cluster assignments don't change:
+    - For each of the *K* clusters, compute the cluster **centroid**, i.e., the mean of observations assigned to the each cluster. This is a vector of length *p* (for *p* features).
+
 # Dimension Reduction
 Find **low dimensional representation** of data; this is a very useful tool for **discovering patterns** in the data, and also improving the performance of regression and prediction methods.
 - PCA: principal component analysis
