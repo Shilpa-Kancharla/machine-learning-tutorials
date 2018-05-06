@@ -123,9 +123,40 @@ Final Remarks
 `kmeans` and `hclust` in R
 
 # Dimension Reduction
+- Map the data into a new low-dimensional space where important characteristics of the data are preserved.
+- The new space often gives a (linear or nonlinear) transformation of the original data.
+- Visualization and analysis (clustering/prediction/...) is then performed in the new space.
+- In many cases, (especially for nonlinear transformations) interpretation becomes difficult. 
 Find **low dimensional representation** of data; this is a very useful tool for **discovering patterns** in the data, and also improving the performance of regression and prediction methods.
 - PCA: principal component analysis
 - MDS: multi-dimensional scaling
 - Sparse PCA, Kernel PCA, ICA, Manifold learning
 
+## Why Dimension Reduction? 
+For Big Data: 
+- Data visualization becomes very difficult
+- Big data often has a high degree of redundancy (i.e., correlation among features)
+- Many features may be uninformative for the particular problem under study (noise features)
+- Dimension reduction ideally allows us to retain information on most important features of the data, while reducing noise and simplifying visualization & analysis
 
+
+## Principal Components Analysis (PCA)
+Set-up:
+- Data matrix: X (n by p), *n* observations and *p* features.
+
+Idea:
+- Not all *p* features are needed (much redundant information)
+- Find low-dimensional representations that capture most of the variation in data.
+
+Uses:
+- Ubiquitously used: dimension reduction, data visualization, pattern recognition, exploratory analysis, etc.
+- Best linear dimension reduction possible
+
+Main Idea: What is the best 1D representation of the data? 
+
+Some possibilities:
+- Use one of the variables (e.g. x_1)
+- Better idea: use a linear combination of the variables (i.e. a weighted average)
+    z_1 = (v_1)(x_1) + (v_2)(x_2) = (v^T)(X)
+    
+How do we choose the weights? (v_1 and v_2) 
