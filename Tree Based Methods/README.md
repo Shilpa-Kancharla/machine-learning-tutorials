@@ -104,3 +104,9 @@ Some remarks:
 - This means that predictions from the bagged trees can be highly correlated.
 - Averaging many highly correlated predictors does not lead to as large of a reduction in variance as uncorrelated predictors.
 - In such a case, bagging may not give significance reduction in variance compared to a single tree. 
+
+### Out-of-Bag Error Estimations
+- It turns out that we can easily estimate the test error in a *bagged model*
+- In general, the chance of a single observation being included in a given boostrap sample is about 2/3
+- The remaining one-third of the observations not used to fit a given bagged tree are called out-of-bag (OOB) observations
+- These OOB observations can be used to estimate the test error
