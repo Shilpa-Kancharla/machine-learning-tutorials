@@ -116,3 +116,21 @@ Some remarks:
   - It is unclear how each variable affects each of the tree models, and how we should interpret the final model
 - A very useful tool for gaining insight about individual variables is the variable importance plot
   - The plot shows the total amount of improvement in RSS/Gini Index/entropy resulting from splits over a given predictor, averaged over all *B* trees
+  
+## Boosting
+Boosting refers to a group of algorithms that utilize weighted averages to make weak learners into stronger learners. Unlike bagging that had each model run independently and then aggregate the outputs at the end without preference to any model, boosting is all about the "teamwork." Each model that runs, dictates what features the next model will focus on. 
+
+Boosting also requires bootstrapping. Unlike bagging, boosting weighs each sample of data, so samples will be run more often than others.
+
+- Boosting is another approach for improving the performance of tree-based methods
+- Like bagging and random forests, boosting uses multiple trees. The main difference is that
+  - Bagging and random forests aggregate trees based on multiple copies of the data
+  - Boosting aggregates trees based on a modified version of the same data
+- Although we focused here on tree-based methods, bagging and boosting are general purpose methods that can improve the performance of any prediction method  
+- Boosting does not involve on bootstrap sampling, and everything is based on a single dataset.
+- In boosting, the trees are grown sequentially: each tree is grown using information based on previously grown trees.
+- Instead of fitting a single large decision tree, which can potentially overfit of the data, in boosting we learn slowly.
+  - Each tree is small, with just a few terminal nodes.
+  - Given the current model, we fit a decision tree to the residuals from the previous model as the response.
+  - We then add this new deicision tree into the fitted function and update the residuals.
+- By fitting small trees to the residuals, we slowly improve the projected function in areas where it does not perform well.  
