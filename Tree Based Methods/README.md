@@ -88,3 +88,19 @@ The usual decision trees (regression or classification) have high variance:
 - Methods with low variance (e.g., linear regression with small *p*) give similar models in this case
 
 This is a general purpose procedure for reducing the variance of a statistical learning method.
+
+Some remarks: 
+- For classification trees, majority voting takes the place of averaging
+- When using bagging with trees, each tree is grown deep and is not pruned
+- Thus, each individual tree has high variance, but low bias. Averaging these *B* trees reduces the variance. 
+- The value of *B* is not critical: 
+  - Using a very lare value of *B* will not lead to overfitting
+  - As *B* increases, computation becomes more expensive
+  - In practice, *B* = 100 to *B* = 1000 works pretty well
+  
+## Random Forests
+- Suppose that there is one very strong predictor in the dataset, along with a number of moderately strong ones.
+- Then in the collection of bagged trees, most or all of the trees will use this strong predictor in the top split, and they all look somewhat similar.
+- This means that predictions from the bagged trees can be highly correlated.
+- Averaging many highly correlated predictors does not lead to as large of a reduction in variance as uncorrelated predictors.
+- In such a case, bagging may not give significance reduction in variance compared to a single tree. 
