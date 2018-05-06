@@ -42,3 +42,5 @@
 - Random Forests
 
 ## Unsupervised Learning
+- Cluster Analysis
+- Dimension Reduction
