@@ -251,4 +251,16 @@ Weaknesses:
   - Typically, optimize PCA criterion with sparsity-encouraging penalty of **V**
   - Many methods, active area of research
   
-In R: `SPC` in `PMA` package.  
+In R: `SPC` in `PMA` package.
+
+## Functional PCA
+- Motivation:
+  - Time series, ordered data, spatial data
+- Idea:
+  - Want PC loadings to be smooth (vary continuously) over time or space
+  - Advantage: improve interpretation
+- How? 
+  - Typically, optimize PCA criterion with a penalty that encourages smoothness of **V** over time or space
+  - Many methods for both functional data (data in the form of curves) and discretely-sampled functional data (e.g. discrete time points or specific locations
+  
+In R: `fpca` package.
