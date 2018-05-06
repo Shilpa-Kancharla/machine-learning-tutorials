@@ -135,3 +135,9 @@ Boosting also requires bootstrapping. Unlike bagging, boosting weighs each sampl
   - We then add this new decision tree into the fitted function and update the residuals.
 - By fitting small trees to the residuals, we slowly improve the projected function in areas where it does not perform well.
 - The *i*th classifier is supposed to correct the mistakes made by the previous classifier (*i* - 1). It is done by weighing more the misclassified observations. The final classifier is calculated by a weighted mean of all the "weak" classifiers, the weights being close the accuracies calculated for each classifier.
+
+### Tuning Parameters
+Boosting has 3 tuning parameters: 
+1. Number of trees *B*: unlike bagging and random forests, boosting can overfit if *B* is too large, though this happens slowly. We use cross validation to select *B*. 
+2. Shrinkage parameter *lambda*: a small posisitve number that controls the rate of learning (typically 0.01 or 0.001). Lambda slows down the learning process, allowing more and different shaped trees to attack the residuals. A very small *lambda* may require a very large *B* to achieve good performance.
+3. The nubmer of splits in each tree *d*: controls the complexity of the boosted ensemble. Often a single split d = 1 works well (each tree is a stump). When d = 1, we are fitting an additive model, and in general *d* is the interaction depth.
