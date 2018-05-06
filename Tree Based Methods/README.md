@@ -65,6 +65,16 @@ Bootstrap is useful because it provides stability of a solution. By using multip
 - Both bagging and random forests build trees by sampling from the original data using the bootstrap
 - Bootstrap is a powerful and general procedure that can be used assess the variability of estimators. Here, we see that bootstrap can also be used to improve the performance of estimators.
 
+### Additional comments of bootstrap
+- When does the bootstrap (probably) work? 
+  - When our statistic, suitably centered and scaled, has a reasonable asymptotic distribution.
+- When does bootstrap not work? 
+  - When our statistic is weird (not a smooth function of the data), or when *n* is really small (boostrap is an asymptotic procedure too).
+- Other thoughts
+  - Using "fancier" bootstraps (ABC, BCA, "t", etc.) can lead to more correct CI (more correct than using asymptotic normality)
+  - Bootstrap can also be used to estimate the test error, but this is not straightforward.
+  - We don't have to take a sample size of *n*, we can take a smaller sample of size *m* (especially when the original bootstrap does not work), but the sampling should always be with replacement. 
+
 ## Bagging
 
 Bagging refers to **bootstrap aggregators**. Bagging predictors is a method for generating multiple versions of a predictor and using these to get an aggregated predictor. Bagging helps reduce variance from models that may be very accurate, but only the data they were trained on (overfitting). Decision trees can be easily overfit, as they are composed of if-else statements. Thus, if the dataset is changed to a new dataset that might have some bias or difference in spread of underlying featuers compared to the previous set. The model will fail to be accurate because test data will not fit it as well. 
@@ -72,3 +82,9 @@ Bagging refers to **bootstrap aggregators**. Bagging predictors is a method for 
 Bagging overcomes this because it creating it's own variance amongst the data by sampling and replacing data while it tests multiple hypothesis (models). This reduces noise by utilizing multiple samples that would most likely be made up of data with various attributes (median, average, etc.)
 
 Once each model has developed a hypothesis, the models use *voting for classification* or *averaging for regression*. Each hypothesis has the same weight as all the others. All of the models run at the same time, and vote on which hypothesis is the most accurate. This helps decrease variance, i.e., reduce the overfit. 
+
+The usual decision trees (regression or classification) have high variance: 
+- If we split the training data into two parts, we get very different trees
+- Methods with low variance (e.g., linear regression with small *p*) give similar models in this case
+
+This is a general purpose procedure for reducing the variance of a statistical learning method.
