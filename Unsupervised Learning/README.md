@@ -86,6 +86,9 @@ Hierarchical clustering results in a sequence of solutions (nested clusters), or
 - May result in empty clustesr
 - May result in artificially small clusters (a possible solution is to eliminate outliers)
 
+### Improving *K*-Means
+A practical solution for obtaining better solutions *K*-means is to run the algorithm with a number of random starting points, and then choose the solution with lowest objective function.
+
 # Dimension Reduction
 Find **low dimensional representation** of data; this is a very useful tool for **discovering patterns** in the data, and also improving the performance of regression and prediction methods.
 - PCA: principal component analysis
