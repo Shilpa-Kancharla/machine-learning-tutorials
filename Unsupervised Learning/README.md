@@ -53,6 +53,23 @@ Hierarchical clustering results in a sequence of solutions (nested clusters), or
 - Less sensitive to outliers
 - Works better with *spherical distributions*
 
+## Advantages and Disadvantages of Hierarchical Clustering
+- Advantages: gives a family of possible outcomes; computationally fast
+- Disadvantages: no optimization criterion; final solution chosen by the data analyst; different merging (splitting) criteria give different solutions
+
+### Hierarchical Clustering vs. Partition-Based Methods
+- In hierarchical clustering, a sequence of possible clusterings is generated
+- The analyst then decides on the number of clusters (by deciding where to cut the dendrogram)
+- In partition-based methods, data is partitioned into a number of *a priori* given clusters
+- No need for intervention by analyst; however, number of clusters needs to be specified
+
+## *K*-Means Clustering
+- The most popular partition-based methods is *K*-means clustering
+- Motivated by a simple and intuitive mathematical problem
+- Uses Euclidean distance between points
+- Computationally efficient, and can be applied to datasets with a large number of samples (variables)
+- No hierarchy among clusters, if *K* is changed, the cluster memberships will also change
+
 # Dimension Reduction
 Find **low dimensional representation** of data; this is a very useful tool for **discovering patterns** in the data, and also improving the performance of regression and prediction methods.
 - PCA: principal component analysis
