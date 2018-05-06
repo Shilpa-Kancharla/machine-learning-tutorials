@@ -117,3 +117,13 @@ In R, we can specify lambda or the degrees of freedom
 - One could use a polynomial as in polynomial regression
 - One could use a smoothing kernel
 - Most common approach we use is a spline
+
+Pros
+- By allowing one to fit a nonlinear f_j to each X_j we can automatically model nonlinear relationships that standard linear regression will miss. 
+- We can potentially make more accurate predictions.
+- Because we are fitting an additive model, we can still examine the effect of each X_j on Y individually while holding all the other X's fixed. Hence if we are interested in inference, GAM are still a good approach to use. 
+
+Cons
+- The model is restricted to be additive
+- Thus our fit is not completely nonlinear
+- For example, a simple interaction between X_1 and X_2 of the form Y = (X_1)(X_2) can't automatically be modeled using GAM (of course still manually add in an interaction term just as with linear regression).
