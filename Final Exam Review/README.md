@@ -16,6 +16,24 @@ I collect a set of data (n = 100 observations) containing a single predictor and
 
 ### Computation 2
 
+This question should be answered using the `Carseats` data set.
+
+(a) Fit a multiple regression model to predict `Sales` using `Price`, `Urban`, and `US`.
+
+(b) Provide an interpretation of each coefficient in the model.
+
+(c) Write out the model in equation form, being careful to handle the qualitative variables properly.
+
+(d) For which of the predictors can you reject the null hypothesis H0 : βj = 0?
+
+(e) On the basis of your response to the previous question, fit a smaller model that only uses the predictors for which there is evidence of association with the outcome.
+
+(f) How well do the models in (a) and (e) fit the data?
+
+(g) Using the model from (e), obtain 95% confidence intervals for the coefficient(s).
+
+(h) Using the leave-one-out cross-validation and 5-fold cross-validation techniques to compare the perfor- mance of models in (a) and (e). What can you tell from (f) and (h)?
+
 ## Homework 3
 
 ### Theory 1
