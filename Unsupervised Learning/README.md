@@ -213,3 +213,42 @@ How to choose *K*?
 - The option `scale = TRUE` standardizes the variables to have standard deviation 1
 - The `rot` is shorthand for **rotation**, which reflects the fact that PC's are linear combinations of the original variables
 - Each PC (column) in the table gives the weights for the linear combination for calculating the *m*th PC. So the columns of the table give the **PC loadings**.
+
+
+### PC loadings
+- Each PC loading is unique up to a sign flip (change of sign doesn't change the direction), so multiplying by -1 does not change the PCs.
+- We can easily get the PC's from the PC loadings: the *m*th PC score vector is given by *Z_m* = *Xv_m*, where *v_m*  is the *m*th PC loading (*m*th column)
+- More generally, we can get the PC score matrix *Z = XV* where *V* is the matrix of PC loadings.
+- Observations can be plotted ("projected") in the space of PC's.
+- Roughly this is equivalent to rotating the axes and plotting the original data points in the new axes Z_1 and Z_2
+- We can get these by setting `retx = TRUE` in the `prcomp` call: `pc.out <- prcomp(USArrests, scale=TRUE, retx=TRUE)`
+- `pc.out$x` is a matrix of dimension 50 by 4 (from USArrests dataset), which has as its columns the PC score vectors
+- Plotting the observations in the space of PC scores can reveal interesting relationshps between them.
+  - `plot(pc.out$x[,1], pc.out$x[,2], type="n", xlab="1st PC", ylab="2nd PC")`
+  - `text(pc.out$x[,1], pc.out$x[,2], labels=states)`
+- We can also plot the variables in the space of PC loadings: 
+  - `plot(pc.out$rot, type="n")`
+  - `text(pc.out$rot, names(USArrests), col=4)`
+
+### PCA - Summary
+Strengths: 
+- Best linear dimension reduction
+- Ordered/orthogonal components
+- Unique, global solution
+
+Weaknesses: 
+- Nonlinear patterns
+- Ultra high-dimensional settings (p >> n)
+
+## Sparse PCA
+- Motivation:
+  - When p >> n, many features irrelevant.
+  - PCA can perform poorly
+- Idea:
+  - Sparsity in **V**: zero out irrelevant features from PC loadings
+  - Advantage: find important features that contribute to major patterns in the data
+- How? 
+  - Typically, optimize PCA criterion with sparsity-encouraging penalty of **V**
+  - Many methods, active area of research
+  
+In R: `SPC` in `PMA` package.  
