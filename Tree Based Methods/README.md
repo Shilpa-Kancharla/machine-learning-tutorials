@@ -35,3 +35,22 @@ The main steps of tree-based methods are as follows:
   Average the results for each value of alpha, and pick alpha to minimize the average error.
 
 4. Return the subtree from Step 2 that corresponds to the chosen value of alpha.
+
+### Trees: Pros & Cons
+
+Pros
+- very easy to interpret and explain to others
+- can be easily displayed graphically (especially if they are very small)
+- can easily handle qualitative predictors without the need to create dummy variables
+
+Cons
+- unfortunately, trees generally do not have the same level of predictive accuracy as some of the other regression and classification methods we've discussed so far
+
+By aggregating many decision trees, the predictive performance of trees can be substantially improved.
+
+## Bootstrap
+
+- Bagging, random forests, and boosting use trees as building blocks to construct more powerful prediction models (unfortunately, this comes at the cost of ease of interpretation)
+- All of these methods build many trees to improve the performance of tree-based methods. This is motivated by the fact that usual trees have high variance.
+- Both bagging and random forests build trees by sampling from the original data using the bootstrap
+- Bootstrap is a powerful and general procedure that can be used assess the variability of estimators. Here, we see that bootstrap can also be used to improve the performance of estimators.
