@@ -160,3 +160,8 @@ Some possibilities:
     z_1 = (v_1)(x_1) + (v_2)(x_2) = (v^T)(X)
     
 How do we choose the weights? (v_1 and v_2) 
+
+We need to find a line that maximizes the variance of the data projected on to the line. Subsequent components orthogonal (perpendicular). 
+- PCA minimizes orthogonal projection on the line.
+- Slope of line: v2/v1 (if features centered)
+- Note: Not same as OLS which minimizes projection of y onto x.
