@@ -34,4 +34,11 @@
 
 ## Tree-Based Methods
 
+- Classification Trees
+- Regression Trees
+- Bootstrap
+- Bagging
+- Boosting
+- Random Forests
+
 ## Unsupervised Learning
