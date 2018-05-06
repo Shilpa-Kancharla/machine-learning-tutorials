@@ -41,6 +41,18 @@ Hierarchical clustering results in a sequence of solutions (nested clusters), or
 - In practice, often results in unbalanced clusters; may break down the clusters by "chaining" their members
 - Can result in extended, trailing clusters in which observations are fused one-at-a-time
 
+### Complete Linkage
+- At each step, the *maximum distance* between points in two clusters is used to determine which two clusters should be merged
+- Often gives *comparable cluster sizes*
+- Less sensitive to outliers
+- Works better with *spherical distributions*
+
+### Average Linkage
+- At each step, the *average distance* between points in two clusters is used to determine which two clusters should be merged
+- A compromise between single and complete linkage
+- Less sensitive to outliers
+- Works better with *spherical distributions*
+
 # Dimension Reduction
 Find **low dimensional representation** of data; this is a very useful tool for **discovering patterns** in the data, and also improving the performance of regression and prediction methods.
 - PCA: principal component analysis
