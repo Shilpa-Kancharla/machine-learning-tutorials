@@ -165,3 +165,27 @@ We need to find a line that maximizes the variance of the data projected on to t
 - PCA minimizes orthogonal projection on the line.
 - Slope of line: v2/v1 (if features centered)
 - Note: Not same as OLS which minimizes projection of y onto x.
+
+### PCA - Properties
+- Unique
+  - **U** and **V** unique up to a sign change
+  - **D** unique
+- Global solution
+
+### PCA - Pattern Recognition
+- **u_1** - first column of **U** encodes first major pattern in observation space
+- **v_1** - first column of **V** encodes the associated first pattern in feature space
+- *d_1* gives strength of first pattern
+- Subsequent patterns are **uncorrelated** to first pattern (i.e., orthogonal)
+
+### PCA - Data Visualization
+- PC Scatterplots: 
+  - Problem: can't visualize
+  - Solution: plot **u_1** vs **u_2** and so forth
+  - Advantages: 
+    - Dramatically reduces number of 2D scatterplots to visualize
+    - Focuses on patterns with most variance
+- PC Loadings Plots: 
+  - Scatterplots of **v_1** vs **v_2**
+  - Visualizations of **v_k**
+- Biplot: scatter plot of PC1 vs PC2 with loadings of **v_1** vs **v_2** overlaid
