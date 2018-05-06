@@ -189,3 +189,21 @@ We need to find a line that maximizes the variance of the data projected on to t
   - Scatterplots of **v_1** vs **v_2**
   - Visualizations of **v_k**
 - Biplot: scatter plot of PC1 vs PC2 with loadings of **v_1** vs **v_2** overlaid
+
+### PCA - Dimension Reduction
+How to choose *K*? 
+- Elbow in screeplot
+- Take *K* that explains at least 90% (95%, 99%, etc) variance.
+- More sophisticated: 
+  - CV done internally 
+  - Validation via matrix completion
+  - Nuclear norm penalties
+
+### PCA - Center and Scale?
+- Typically, one should center features (i.e., columns of X)
+  - Maximizing variance interpretation (assumes multivariate Gaussian model)
+- Scaling changes PCA solution
+  - Features with large scale contribute more to variance, have large PC loadings
+- General Suggestions
+  - Scale if features measured differently
+  - Don't scale if features measured in same way & scale has meaning
