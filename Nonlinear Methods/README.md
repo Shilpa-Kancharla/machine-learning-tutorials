@@ -127,3 +127,10 @@ Cons
 - The model is restricted to be additive
 - Thus our fit is not completely nonlinear
 - For example, a simple interaction between X_1 and X_2 of the form Y = (X_1)(X_2) can't automatically be modeled using GAM (of course still manually add in an interaction term just as with linear regression).
+
+### R Functions for GAMs
+
+- Packages `gam mgcv`
+- Function `gam`
+- The `gam` represents the smooth functions using penalized regression splines, given the number basis functions used.
+- The `gam` solves the smoothing parameter estimation problem by using the Generalized Cross Validation (GCV) criterion.
