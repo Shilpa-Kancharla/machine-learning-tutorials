@@ -52,7 +52,19 @@ By aggregating many decision trees, the predictive performance of trees can be s
 
 https://medium.com/@SeattleDataGuy/how-to-develop-a-robust-algorithm-c38e08f32201
 
+Bootstrap method refers to random sampling with replacement. This sample is referred to as a resample. This allows the model or algorithm to get a better understanding of the various biases, variances and features that exist in the resample. Taking a sample of the data allows the resample to contain different characteristics than it might have contained as a whole. This is good for small size datasets that have a tendency to overfit.
+
+Bootstrap is useful because it provides stability of a solution. By using multiple sample datasets and then testing multiple methods, it can increase robustness. Bootstrapping uses both bagging and boosting, which will be discussed later.
+
 - Bagging, random forests, and boosting use trees as building blocks to construct more powerful prediction models (unfortunately, this comes at the cost of ease of interpretation)
 - All of these methods build many trees to improve the performance of tree-based methods. This is motivated by the fact that usual trees have high variance.
 - Both bagging and random forests build trees by sampling from the original data using the bootstrap
 - Bootstrap is a powerful and general procedure that can be used assess the variability of estimators. Here, we see that bootstrap can also be used to improve the performance of estimators.
+
+## Bagging
+
+Bagging refers to **bootstrap aggregators**. Bagging predictors is a method for generating multiple versions of a predictor and using these to get an aggregated predictor. Bagging helps reduce variance from models that may be very accurate, but only the data they were trained on (overfitting). Decision trees can be easily overfit, as they are composed of if-else statements. Thus, if the dataset is changed to a new dataset that might have some bias or difference in spread of underlying featuers compared to the previous set. The model will fail to be accurate because test data will not fit it as well. 
+
+Bagging overcomes this because it creating it's own variance amongst the data by sampling and replacing data while it tests multiple hypothesis (models). This reduces noise by utilizing multiple samples that would most likely be made up of data with various attributes (median, average, etc.)
+
+Once each model has developed a hypothesis, the models use *voting for classification* or *averaging for regression*. Each hypothesis has the same weight as all the others. All of the models run at the same time, and vote on which hypothesis is the most accurate. This helps decrease variance, i.e., reduce the overfit. 
