@@ -14,7 +14,9 @@ Murder Assault UrbanPop Rape
 > print(pc.out$rot)
                       PC1 PC2 PC3 PC4
                       
-Murder -0.5358995 0.4181809 -0.3412327 0.64922780
+Murder  -0.5358995  0.4181809 -0.3412327 0.64922780
 Assault -0.5831836 0.1879856 -0.2681484 -0.74340748
 UrbanPop -0.2781909 -0.8728062 -0.3780158 0.13387773
 Rape -0.5434321 -0.1673186 0.8177779 0.08902432
+
+# There are 4 distinct PC loadings (in general min(n,p))
