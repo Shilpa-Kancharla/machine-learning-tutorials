@@ -89,6 +89,39 @@ Hierarchical clustering results in a sequence of solutions (nested clusters), or
 ### Improving *K*-Means
 A practical solution for obtaining better solutions *K*-means is to run the algorithm with a number of random starting points, and then choose the solution with lowest objective function.
 
+### Choosing *K* (Number of Clusters)
+- Look at the values of within cluster dissimilarity (e.g., WSS) for different *K*
+- In general, WSS decreases as *K* increases
+- Suppose there is *K-star* true clusters
+- If *K < K-star*, increasing *K* will improve WSS significantly
+- If *K > K-star*, increasing *K* will improve WSS slightly
+- Therefore, need to look for an **elbow** in the plot of WSS for *K*
+
+### Other Methods for Choosing *K*
+- Gap statistics: compares the curve of *log WSS* to the curve obtained from data uniformly distributed (i.e., no clusters), and estimates the optimal number of clusters to be the place where the gap between the two curves is largest
+- The Silhouette Coefficient: combines homogeneity and separation, can find the best number of clusters by minimizing this coefficient over range of values of *K*
+- Statistical Significance of Clustering
+
+### Caveats of Cluster Analysis
+Although many clustering algorithms are available, this is sitll a challenging problem: 
+- There is no one-size-fits-all solution to clustering, or even a consensus of what "good" clustering should look like.
+- There is no single best criterion for obtaining a partition because no precise and workable definition of "cluster" exists
+- Clusters can be of any arbitrary shapes and sizes in a high dimensional dataset
+- Each clustering criterion imposes a certain structure on the data, and if the data happen to conform to the requirements of a particular criterion, the true clusters are recovered.
+- It is very hard to evaluate how well a clustering algorithm performs on typical high dimensional datasets.
+- Also, note that centering and scaling will significantly affect the results of cluster analysis
+
+Final Remarks
+- Clustering is very useful for gaining insight in high dimensional data
+- Different clustering results for the same data, using different methods/distance matrices
+- No formal way to verify the results of clustering
+- Determining number of clusters is a challenging problem
+- Results of clustering may vary for normalized observations
+- Best practice is to try different methods/distances and use the results that are more consistent across methods/distances
+- Clustering is a data exploration step, and its results hsould be interpreted that way; cannot make strong claims
+
+`kmeans` and `hclust` in R
+
 # Dimension Reduction
 Find **low dimensional representation** of data; this is a very useful tool for **discovering patterns** in the data, and also improving the performance of regression and prediction methods.
 - PCA: principal component analysis
