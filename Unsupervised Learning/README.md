@@ -76,6 +76,7 @@ Hierarchical clustering results in a sequence of solutions (nested clusters), or
   - Randomly assign each observation to one of the *K* clusters.
   - Iterate until the cluster assignments don't change:
     - For each of the *K* clusters, compute the cluster **centroid**, i.e., the mean of observations assigned to the each cluster. This is a vector of length *p* (for *p* features).
+    - Assign each observations to the cluster with closest centroid (based on Euclidean distance).
 
 # Dimension Reduction
 Find **low dimensional representation** of data; this is a very useful tool for **discovering patterns** in the data, and also improving the performance of regression and prediction methods.
