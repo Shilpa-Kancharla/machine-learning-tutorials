@@ -78,6 +78,14 @@ Hierarchical clustering results in a sequence of solutions (nested clusters), or
     - For each of the *K* clusters, compute the cluster **centroid**, i.e., the mean of observations assigned to the each cluster. This is a vector of length *p* (for *p* features).
     - Assign each observations to the cluster with closest centroid (based on Euclidean distance).
 
+### Properties
+- In *K*-means there is no hiearchy among clusters, if *K* is changed, the cluster memberships will also change.
+- *K*-means works best with compact spherical clusters with comparable number of members
+- Does not work well when cluster sizes are different
+- Results depend on the initial cluster assignment; may not get the best solution
+- May result in empty clustesr
+- May result in artificially small clusters (a possible solution is to eliminate outliers)
+
 # Dimension Reduction
 Find **low dimensional representation** of data; this is a very useful tool for **discovering patterns** in the data, and also improving the performance of regression and prediction methods.
 - PCA: principal component analysis
