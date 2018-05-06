@@ -110,3 +110,9 @@ Some remarks:
 - In general, the chance of a single observation being included in a given boostrap sample is about 2/3
 - The remaining one-third of the observations not used to fit a given bagged tree are called out-of-bag (OOB) observations
 - These OOB observations can be used to estimate the test error
+
+## Interpreting the Results
+- Unfortunately, bagging and random forests result in models that are not easily interpretable: 
+  - It is unclear how each variable affects each of the tree models, and how we should interpret the final model
+- A very useful tool for gaining insight about individual variables is the variable importance plot
+  - The plot shows the total amount of improvement in RSS/Gini Index/entropy resulting from splits over a given predictor, averaged over all *B* trees
