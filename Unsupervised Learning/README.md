@@ -323,3 +323,10 @@ MDS can be very useful if we believe nonlinear distances represent the data bett
 - `daisy()` in the R package `cluster` has a couple of options to get a distance/dissimilarity matrix, the only measure MDS uses 
 - The default is the Euclidean distance, but you can use the Manhattan distance as well
 - `cmdscale()` gives the "classic" MDS; `isoMDS()` gives a non-metric (rank-based) MDS
+
+### Remarks of MDS
+- MDS belongs to the class of nonlinear dimension reduction techniques
+- A number of methods for linear and nonlinear dimension reduction have been proposed
+- The main challenge in unsupervised learning is that we don't know whether a given methods has performed well in our dataset. This becomes even more challenging in high dimensional settings.
+- More importantly, even if we can validate the performance of the method in our dataset, there is no guarantee that the method would work on similar datasets, or on subsequent data gathered for our study.
+- Therefore, it is important to be cautious about interpreting the results of unsupervised learning; it is often easy to get excited with some aspects of the study.
