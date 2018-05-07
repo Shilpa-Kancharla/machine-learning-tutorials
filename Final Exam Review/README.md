@@ -38,6 +38,20 @@ This question should be answered using the `Carseats` data set.
 
 ### Theory 1
 
+Consider the ridge regression with tuning parameter λ = 0 and the constrained version of LASSO with tuning parameter s >= 0. As λ and s increase from 0 respectively, indicate which of the following is correct for: 
+
+(a) training RSS, (b) test RSS, (c) variance, and (d) (squared) bias. Justify your answer.
+
+(i) Increase initially, and then eventually start decreasing in an inverted U shape. 
+
+(ii) Decrease initially, and then eventually start increasing in a U shape.
+
+(iii) Steadily increase. 
+
+(iv) Steadily decrease. 
+
+(v) Remain constant.
+
 ### Theory 2
 
 ### Computation 1
