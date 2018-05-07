@@ -264,3 +264,41 @@ In R: `SPC` in `PMA` package.
   - Many methods for both functional data (data in the form of curves) and discretely-sampled functional data (e.g. discrete time points or specific locations
   
 In R: `fpca` package.
+
+## Supervised Dimension Reduction
+
+- Partial Least Squares: 
+  - Best dimension reduction of cross-covariance between **X** and **Y** such that factors are orthogonal to **X**
+
+- Canonical Correlations Analysis: 
+  - Best dimension reduction of cross-covariance between **X** and **Y** such that bi-projection is orthogonal **X** and **Y**
+
+- Linear Discriminant Analysis (classification): 
+  - Best discrimination reduction of between class covariance matrix relative to within class covariance
+
+## Other Popular Dimension Reduction Methods
+1. Non-negative Matrix Factorization
+  - Finds non-negative factors and factor-loadings
+  - Useful for counts, non-negative data, soft-clustering, archetypal analysis 
+  
+2. Independent Components Analysis
+  - Finds "independent" (non-Gaussian-like) source signals
+  - Useful for blind source separation, cocktail party problem, denoising
+  
+3. Multi-dimensional Scaling
+  - Finds lower dimensional representaitons that preserve distances
+  - Useful for nonlinear dimension reduction, lower dimensional maps, visualization
+
+## Multi-Dimensional Scaling (MDS)
+- PCA is a linear dimension reduction method: it uses linear combinations of the original variables that explain the minimum variation in the data
+- However, in some cases, linear transformations of the variables may not work well
+- This is especially the case, if the data truly belongs on a nonlinear space (called a manifold)
+
+### A motivating example
+Suppose we are given a matrix of perceived similarities between various brands of microwaves, we hope to plot various brands on a map such that those brands that are perceived to be very similar to each other are placed near each other on the map, and those brands that are perceived to be very different from each other are placed far away from each other on the map. 
+
+- In PCA, similarities between variables are defined based on covariance.
+- Covariances are really inner products, which correspond to the Euclidean distance. 
+- One way to make dimension reduction more flexible is to use a more general similarity and/or "distance." 
+- MDS directly works with a distance/dissimilarity matrix of observations. 
+- It then finds a lower dimensional representations (often 2-3D) to preserve the pairwise distance as well as possible. For example, MDS for 2 coordinates optimizes the object locations for a 2D scatterplot. 
