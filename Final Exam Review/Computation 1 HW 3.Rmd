@@ -1,0 +1,59 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+#PART A
+n <- 100
+set.seed(123)
+x <- rnorm(n)
+eps <- rnorm(n)
+
+#PART B
+beta0 <- 3
+beta1 <- 2
+beta2 <- -3
+beta3 <- 0.3
+y <- beta0 + beta1*x + beta2*x^2 + beta3*x^3 + eps
+
+#Best subset selection
+library(leaps)
+data_mod <- data.frame(y = y, x = x)
+p <- 10
+for (j in 2:p)
+  data_mod <- cbind(data_mod, x^j)
+colnames(data_mod)[-1] <- paste("X", 1:p, sep = "")
+mod.best <- regsubsets(y ~ ., data = data_mod, nvmax = 10)
+mod.best.sum <- summary(mod.best)
+#by Cp
+coefficients(mod.best, id = which.min(mod.best.sum$cp))
+coefficients(mod.best, id = which.min(mod.best.sum$bic))
+coefficients(mod.best, id = which.min(mod.best.sum$adjr2))
+```
+```{r}
+#Forward and Backward Stepwise Regression
+mod.fwd <- regsubsets(y ~ ., data = data_mod, nvmax = 10, method = "forward")
+mod.bwd <- regsubsets(y ~ ., data = data_mod, nvmax = 10, method = "backward")
+mod.fwd.sum <- summary(mod.fwd)
+mod.bwd.sum <- summary(mod.bwd)
+```
+```{r}
+library(glmnet)
+data_mod.x <- model.matrix(y ~ ., data_mod)
+set.seed(456)
+grid <- 10^seq(2, -4, length = 100)
+mod.lasso <- cv.glmnet(x = data_mod.x, y = y, lambda = grid, nfolds = 5, alpha = 1)
+coef(mod.lasso, s = "lambda.min")
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
