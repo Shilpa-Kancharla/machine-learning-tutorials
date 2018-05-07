@@ -302,3 +302,11 @@ Suppose we are given a matrix of perceived similarities between various brands o
 - One way to make dimension reduction more flexible is to use a more general similarity and/or "distance." 
 - MDS directly works with a distance/dissimilarity matrix of observations. 
 - It then finds a lower dimensional representations (often 2-3D) to preserve the pairwise distance as well as possible. For example, MDS for 2 coordinates optimizes the object locations for a 2D scatterplot. 
+
+### Some Comments
+- Note that the only thing needed for MDS is the dissimilarity matrix *D*. In general, different dissimilarity measures can give different MDS solutions. 
+- The "classical" MDS uses the Euclidean distance, which gives results somewhat similar to PCA (though the objective is different). Classical MDS is also referred to as **Principal Coordinate Analysis**.
+  - PCA: finds a lower dimensional representation that maximizes the variance
+  - MDS: finds a lower dimensional representation that best preserves the distances between the points
+- We can use any other objective function or distance; this defines the general class of *metric* MDS
+- We can also use rankings instead of distances, which gives rise to *non-metric* MDS
