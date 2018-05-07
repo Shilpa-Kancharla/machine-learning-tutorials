@@ -1,5 +1,7 @@
 ## Linear Regression in High Dimensions
 
+Good introduction to basic terminology & concepts: https://www.youtube.com/watch?v=ipb2MhSRGdw
+
 - Variable Pre-Selection: simplest, most straightforward method
 
 1. Choose a small set of variables, say the q variables that are most correlated with the response, where q < n and q < p
