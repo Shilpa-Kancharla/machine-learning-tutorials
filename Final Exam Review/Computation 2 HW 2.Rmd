@@ -1,0 +1,90 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+# PART A
+library(ISLR)
+head(Carseats)
+summary(Carseats)
+carseat.fit <- lm(Sales ~ Price + Urban + US, data = Carseats)
+carseat.fit
+summary(carseat.fit)
+```
+#PART B
+The intercept of this linear regression model for the Carseat data is the 13.04347. The linear regression suggest a relationship between price and sales given the low p-value and low t-statistic and there is a negative relationship. As the price increases, the sales decrease. Given the low p-value of US as well, we can see that US and Sales have a relationship as well, albeit a positive one. If there is a store in the US, sales will increase by 1201 units. UrbanYes and Sales do not have a significant relationship because there is a large p-value and high t-statistic present present. 
+
+#PART C
+
+Y = 13.043469 - 0.054459*Price - 0.021916*UrbanYes + 1.200573*USYes
+
+# PART D
+
+We can reject the null hypothesis for Price & USYes with a significance p = 0.05.
+
+```{r}
+#PART E
+carseat1.fit <- lm(Sales ~ Price + US, data = Carseats)
+summary(carseat1.fit)
+```
+
+#PART F
+The R squared suggests that both models only explain 23.93% of the variation. Based on the RSS, the model from Part A is lower so it is a better model. 
+```{r}
+RSS.mod1 <- sum(residuals(carseat.fit)^2)
+RSS.mod2 <- sum(residuals(carseat1.fit)^2)
+RSS.mod1
+RSS.mod2
+```
+#PART G
+```{r}
+confint(carseat1.fit)
+```
+# PART H
+```{r}
+#using LOOCV
+LOOCV.lm <- function(mod) {
+  n <- nrow(mod$model) #number of observations
+  cv.error <- numeric()
+  for (i in 1:n)
+    cv.error[i] <- mod$model[i, 1] - predict(update(mod, subset = -i), mod$model[i,])
+  
+  return(list(cv.error = cv.error, cv.error.total = sum(cv.error^2), cv.error.mean = mean(cv.error^2)))
+  
+}
+loocv.model1 <- LOOCV.lm(carseat.fit)$cv.error.mean
+loocv.model1
+loocv.model2 <- LOOCV.lm(carseat1.fit)$cv.error.mean
+loocv.model2
+```
+```{r}
+# K-fold CV, K = 5
+cv.lm <- function(mod, K=5) {
+   n <- nrow(mod$model) #number of observations
+   cv.error <- numeric()
+   cv.error.Kfold <- numeric()
+   shuffle <- sample.int(n)
+   for (k in 1:K) {
+     subs <- shuffle[(n*(k-1)/K + 1):(n*k/K)]
+     cv.error[subs] <- mod$model[subs, 1] - predict(update(mod, subset = -subs), mod$model[subs,])
+     cv.error.Kfold[k] <- mean(cv.error[subs]^2)
+   }
+  return(list(cv.error = cv.error, cv.error.total = sum(cv.error^2), cv.error.mean = mean(cv.error^2)))
+}
+cv5fold.model1 <- cv.lm(carseat.fit)
+cv5fold.model2 <- cv.lm(carseat1.fit)
+cv5fold.model2$cv.error.mean
+```
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
