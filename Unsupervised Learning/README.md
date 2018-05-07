@@ -312,3 +312,14 @@ Suppose we are given a matrix of perceived similarities between various brands o
 - We can also use rankings instead of distances, which gives rise to *non-metric* MDS
 
 MDS can be very useful if we believe nonlinear distances represent the data better.
+
+### Idea behind MDS
+- In the city example, the input matrix {d_ii'} has nonnegative entries which represent distances. The smaller the distance is, we hope the two points closer, vice versa.
+- The goal of MDS is to find a set of vectors in *k*-dimensional space so that the matrix of distances (e.g., Euclidean) among them corresponds as well as possible to the input matrix.
+- Evaluation of closeness: stress function
+
+### MDS in R
+
+- `daisy()` in the R package `cluster` has a couple of options to get a distance/dissimilarity matrix, the only measure MDS uses 
+- The default is the Euclidean distance, but you can use the Manhattan distance as well
+- `cmdscale()` gives the "classic" MDS; `isoMDS()` gives a non-metric (rank-based) MDS
