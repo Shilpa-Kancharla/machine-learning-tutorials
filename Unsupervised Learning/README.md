@@ -310,3 +310,5 @@ Suppose we are given a matrix of perceived similarities between various brands o
   - MDS: finds a lower dimensional representation that best preserves the distances between the points
 - We can use any other objective function or distance; this defines the general class of *metric* MDS
 - We can also use rankings instead of distances, which gives rise to *non-metric* MDS
+
+MDS can be very useful if we believe nonlinear distances represent the data better.
