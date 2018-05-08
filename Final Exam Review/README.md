@@ -62,9 +62,15 @@ Consider the ridge regression with tuning parameter λ = 0 and the constrained v
 
 ### Theory 3
 
-### Theory 4
+**Suppose we collect data for a group of students in a statistics class with variables X1 = hours studied, X2 = undergrad GPA and Y = receive an A. We fit a logistic regression and produce estimated coefficient, β^0 = -6, βˆ1 = 0.05, βˆ2 = 1.**
 
-LDA & QDA: 
+**(a) Provide an interpretation of each coefficient in the model. Note that β^0 corresponds to an additional intercept in the model.**
+
+**(b) Estimate the probability that a student whoe studies for a 40 hours and has an undergrad GPA of 3.5 gets an A in the class**
+
+**(c) How many hours would the student in part (b) need to study to have a 50% chance of getting an A in the class?**
+
+### Theory 4
 
 **(a) If the Bayes decision boundary is linear, do we expect LDA or QDA to perform better on the training set? On the test set?**
 
