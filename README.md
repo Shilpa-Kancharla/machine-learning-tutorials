@@ -19,7 +19,13 @@
 
 ## Classification
 
-- Logistic Regression
+- Logistic Regression (can be extended to the following listed below)
+  - Variable Pre-Selection
+  - Forward Stepwise Logistic Regression
+  - Ridge Logistic Regression
+  - LASSO Logistic Regression
+  - Principal Components Logistic Regression
+  - Partial Least Squares Logistic Regression
 - Linear Discriminant Analysis (LDA)
 - Quadratic Discriminant Analysis (QDA)
 - K-Nearest Neighbors Classification (KNN)
