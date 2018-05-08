@@ -64,15 +64,30 @@ Consider the ridge regression with tuning parameter λ = 0 and the constrained v
 
 **(i) Both PCR and PLS come up with orthogonal features.**
 
+True. The reason follows the optimization formulation of PCR and the orthogonality arguments of PLS.
+
 **(ii) Let Zp1q, Zp2q,  ̈  ̈  ̈ , Zppq be the features obtained by PLS. For an intermediate k ă p, we fit a regression model Y on Zp1q, Zp2q,  ̈  ̈  ̈ , Zpkq, and obtain a predicted response Yˆ pkq on the training
 set. Then Yˆ pkq is orthogonal to the subsequent features Zpk`1q, Zpk`2q,  ̈  ̈  ̈ , Zppq. Therefore, to compute Yˆ pk`1q (the predicted response based on Zp1q, Zp2q,  ̈  ̈  ̈ , Zpkq, Zpk`1q), we can first regress Y on Zpk`1q only and obtain Yˆ pZpk`1qq (the predicted response based on Zpk`1q only), and then let
 Yˆ pk`1q Ð Yˆ pkq ` Yˆ pZpk`1qq.**
 
+True. They are orthogonal. As a result from the linear model, if the covariates are orthogonal (hence the design matrix is orthogonal), then the coefficient estimates are independent of each other. Namely, adding another term to the working model with the covariates wouldn't alter the coefficient estimates for the original covariates.
+
 **(iii) The first feature from PLS is more predictive towards the response in the training set than that from PCR.**
+
+False. It's anticipated that the first feature (or the first *k* features) from PLS are more predictive than that from PCR, since PLS tries to capture the correlations between the covariates and the response as much as possible whereas PCR does not. However, the predictivity of the PLS features is indeterminante due to the following perspectives: 
+
+- Perspective I: Since the correlation criteria is "partial" towards each covariate, but not "jointly" towards the constructed feature, the result should be indeterminate.
+- Perspective II: As can be seen from the optimization formulation, each PLS feature is chosen to maximize a compromised measurement in its varianc and correlation with the response, while the training errors (or R squared) only depend on the correlations of features with the response, the result should be indeterminate.
 
 **(iv) In the procedures of constructing features from PCR and PLS, the earlier a feature is included in the regression model, the faster the training R squared increases.**
 
-**(v) Using the features from PCR and PLS has lower training erros and test errors than those of the original model.**
+False. The procedure of PCR is irrelevant to the response vector and so it is irrelevant tot he fitted consequences, includign R squared. Similarly, PLS follows the same rule.
+
+**(v) Using the features from PCR and PLS has lower training errors and test errors than those of the original model.**
+
+False. Both PCR and PLS have higher training RSSs, unless we use all the features in PCR and PLS (leads to a saturated model). Since both the parsimonious (not including all features) PCR and PLS form sub-models of the original linear model, the original linear model would have the least training RSS (due to least square). However, if all features are included in PCR and PLS, the resulting model is equivalent to the original linear model, hence it would give the same training RSS.
+
+In terms of test errors, we anticipate that as the number of features from PCR or PLS increases (up to the saturated model), the test RSS would decrease first and then increase eventually due to the bias-variance tradeoff. When the number of features is 0, PCR and PLS given the simplest model with lowest variance and highest bias. As the number of features increases, PCR and PLS tend to give a model more similar to the (saturated) linear model. In the extreme case, there might be overfitting issue unless the saturated linear model is well- or under-specified. Therefore, the variance would increase whereas the bias would decrease overtime. And the test error would behave as a U shape as the number of features increase.
 
 ### Theory 3
 
