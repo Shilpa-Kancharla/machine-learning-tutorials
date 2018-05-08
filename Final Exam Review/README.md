@@ -131,6 +131,28 @@ False. QDA could overfit the model and lead to a higher test error. It would lea
 
 ### Theory 1
 
+**Are the following statements True or False? Briefly justify your answer.**
+
+**(i) In regresion tree problem, the recursive binary splitting can be formulated as a generalized forward stepwise regression algorithm. However, the legitimate entering variable candidates at each forward regression step depends on the current predictors.**
+
+True. One-step binary splitting is equivalent to one-step forward regression. 
+
+**(ii) A decision tree permits a partition X1X2 >= 3**
+
+False. Decision trees only permit rectangles
+
+**(iii) Since two bootstrap samples are iid from a given dataset, the same statistics (e.g., sample means) computed out of them are iid as well.**
+
+False. The bootstrap samples are iid *conditional* on the given dataset. If the dataset is considered as a random sample from the population, then the bootstrap samples out of it are dependent with each other, so as the statistics computed out of them. Distributions of bootstrap statistics are identical.
+
+**(iv) The out-of-bag (OOB) error underestimates the test error of the bagging model since it "overuses" the training sample.**
+
+False. A bag is independent of the OOB sample points even though the dataset is considered as random. Therefore, the prediction of the model based on the bags not including a held-out sample point. Generally, the OOB error is generally larger than (overestimating) the actual prediction error.
+
+**(v) When the number of variables is large, but the fraction of relevant variables is small, random forests are likely to perform poorly with small *m*, the number of predictors in each tree.**
+
+True. If the relevant variables are rare relative to the number of predictors in a component tree, then the chance that important predictors are included is quite small. This is, there would be too many poorly fitted components trees in the forest.
+
 ### Theory 3
 
 ### Computation 1 
