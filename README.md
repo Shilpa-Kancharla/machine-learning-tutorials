@@ -25,7 +25,6 @@
   - Ridge Logistic Regression
   - LASSO Logistic Regression
   - Principal Components Logistic Regression
-  - Partial Least Squares Logistic Regression
 - Linear Discriminant Analysis (LDA)
 - Quadratic Discriminant Analysis (QDA)
 - K-Nearest Neighbors Classification (KNN)
