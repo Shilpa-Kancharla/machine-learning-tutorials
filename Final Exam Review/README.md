@@ -64,6 +64,24 @@ Consider the ridge regression with tuning parameter λ = 0 and the constrained v
 
 ### Theory 4
 
+LDA & QDA: 
+
+**(a) If the Bayes decision boundary is linear, do we expect LDA or QDA to perform better on the training set? On the test set?**
+
+QDA will probably perform better on the training set because of the high flexibility, thus leading to a closer fit (lower bias). However, on the test set, we cannot make any further assumptions unless we know more about about the nature of the relationship of the predictors and the response. Even though the Bayes decision boundary may be linear, the underlying distributional relationships may not be Gaussian. Therefore, neither LDA nor QDA fits into the framework.
+
+**(b) If the Bayes decision boundary is nonlinear, do we expect LDA or QDA to perform better on the training set? On the test set?**
+
+Nonlinearity does not imply a quadratic boundary and we do not know if this setting holds up the Gaussian assumptison of QDA for the test set.
+
+**(c) In general, as the sample size *n* increases, do we expect the test prediction accuracy of QDA relative to LDA to improve, decline, or be unchanged? Why?**
+
+We would expect the accuracy of QDA to improve relative to LDA to improve as the sample size *n* increases, because a more flexible method will yield a less biased model while the variance from the training set would be vanishing as n approaches infinity.
+
+**(d) True or False: Even if the Bayes decision boundary for a given problem is linear, we will probably achieve a superior test error test error rate using QDA rather than LDA because QDA is flexible enough to model a linear decision boundary. Justify your answer.**
+
+False. QDA could overfit the model and lead to a higher test error. It would lead to a higher variance from the training set, yielding a higher test error rate than LDA.
+
 ### Computation 1
 
 ## Homework 5
