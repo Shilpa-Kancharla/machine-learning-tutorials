@@ -60,6 +60,20 @@ Consider the ridge regression with tuning parameter λ = 0 and the constrained v
 
 ### Theory 1
 
+**Are the following sentences about PCR and PLS true or false? Briefly justify your answer.**
+
+**(i) Both PCR and PLS come up with orthogonal features.**
+
+**(ii) Let Zp1q, Zp2q,  ̈  ̈  ̈ , Zppq be the features obtained by PLS. For an intermediate k ă p, we fit a regression model Y on Zp1q, Zp2q,  ̈  ̈  ̈ , Zpkq, and obtain a predicted response Yˆ pkq on the training
+set. Then Yˆ pkq is orthogonal to the subsequent features Zpk`1q, Zpk`2q,  ̈  ̈  ̈ , Zppq. Therefore, to compute Yˆ pk`1q (the predicted response based on Zp1q, Zp2q,  ̈  ̈  ̈ , Zpkq, Zpk`1q), we can first regress Y on Zpk`1q only and obtain Yˆ pZpk`1qq (the predicted response based on Zpk`1q only), and then let
+Yˆ pk`1q Ð Yˆ pkq ` Yˆ pZpk`1qq.**
+
+**(iii) The first feature from PLS is more predictive towards the response in the training set than that from PCR.**
+
+**(iv) In the procedures of constructing features from PCR and PLS, the earlier a feature is included in the regression model, the faster the training R squared increases.**
+
+**(v) Using the features from PCR and PLS has lower training erros and test errors than those of the original model.**
+
 ### Theory 3
 
 **Suppose we collect data for a group of students in a statistics class with variables X1 = hours studied, X2 = undergrad GPA and Y = receive an A. We fit a logistic regression and produce estimated coefficient, β^0 = -6, βˆ1 = 0.05, βˆ2 = 1.**
