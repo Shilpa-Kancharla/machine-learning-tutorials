@@ -35,4 +35,4 @@ def search(query):
     return results
 
 if __name__ == '__main__':
-    links = search('rasmallai')
+    links = search('rasmalai')
