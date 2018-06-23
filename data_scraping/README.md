@@ -1,6 +1,4 @@
-Python Data Scraping Tutorial
-
-## Problem
+## Python Data Scraping Tutorial
 
 - Write a Python program to parse a search engine (ideally Bing) for a given text. The text will usually be a dish name. Extract links from these results.
 
