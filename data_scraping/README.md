@@ -7,3 +7,5 @@
 - Extract keywords from these contents using natural language processing (NLP).
 
 - Deliverables: Python program & CSV file containing dish name and associated keywords obtained using NLP.
+
+Step 1: Install HTML parser: ` $ pip install BeautifulSoup`
