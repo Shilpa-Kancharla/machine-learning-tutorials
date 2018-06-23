@@ -8,4 +8,9 @@
 
 - Deliverables: Python program & CSV file containing dish name and associated keywords obtained using NLP.
 
-Step 1: Install HTML parser: ` $ pip install BeautifulSoup`
+**Step 1**: Install HTML parser: ` $ pip install BeautifulSoup`
+
+While we are on this step, import the "urllib" and "urllib2" packages in addition to the parser package at the header of our Python script. We will need the other packages for our HTTPS request.
+
+`from BeautifulSoup import BeautifulSoup
+import urllib,urllib2`
