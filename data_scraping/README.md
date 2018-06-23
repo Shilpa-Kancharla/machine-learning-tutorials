@@ -8,6 +8,10 @@
 
 - Deliverables: Python program & CSV file containing dish name and associated keywords obtained using NLP.
 
-**Step 1**: Install HTML parser: ` $ pip install BeautifulSoup`
+## Natural Language Processing
 
-While we are on this step, import the "urllib" and "urllib2" packages in addition to the parser package at the header of our Python script. We will need the other packages for our HTTPS request.
+- Noise removal: any piece of text which is not relevant to the context of the data and the end-output can be specificed as the noise. For example, language stopwords (commonly used words of a language – is, am, the, of, in etc), URLs or links, social media entities (mentions, hashtags), punctuations and industry specific words. This step deals with the removal of noisy entities present in the text. 
+
+- General method for removal is to prepare a dictionary of noisy entitities, and iterate the text object by tokens (or by words), eliminating those tokens which are present in the noise dictionary. 
+
+- **removal.py** shows a way to do this.
