@@ -8,6 +8,8 @@
 
 - Deliverables: Python program & CSV file containing dish name and associated keywords obtained using NLP.
 
+Make sure you use `from bs4 import BeautifulSoup` and `import urllib, urllib2`.
+
 ## Natural Language Processing
 
 - *Noise removal*: any piece of text which is not relevant to the context of the data and the end-output can be specificed as the noise. For example, language stopwords (commonly used words of a language – is, am, the, of, in etc), URLs or links, social media entities (mentions, hashtags), punctuations and industry specific words. This step deals with the removal of noisy entities present in the text. 
